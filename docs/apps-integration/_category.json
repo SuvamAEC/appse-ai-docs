@@ -1,0 +1,10 @@
+{
+  "id": "apps-integration",
+  "label": "Apps Documentation",
+  "position": 0,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "platform-introduction"
+  }
+}
