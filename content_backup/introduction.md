@@ -1,4 +1,5 @@
 ---
+id: platform-introduction
 title: Introducing appse ai
 sidebar_position: 1
 slug: /platform
