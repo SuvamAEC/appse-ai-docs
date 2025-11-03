@@ -1,6 +1,6 @@
 ---
 title: Run and Activate Workflows
-sidebar_position: 5
+sidebar_position: 4
 description: Learn how to run and activate workflows in APPSeAI to automate processes effectively.
 slug: /platform/key-concepts/workflow/run-and-activate-workflows/
 ---
