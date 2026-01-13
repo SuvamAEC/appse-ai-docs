@@ -50,10 +50,6 @@ jobs:
             --name ${{ secrets.AKS_CLUSTER_NAME }} \
             --overwrite-existing
 
-      - name: Ensure namespace exists
-        run: |
-          kubectl create namespace $NAMESPACE --dry-run=client -o yaml | kubectl apply -f -
-
       - name: Deploy to AKS
         run: |
           kubectl apply -f k8s/deployment.yaml
