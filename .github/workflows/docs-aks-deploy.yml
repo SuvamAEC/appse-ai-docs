@@ -23,17 +23,13 @@ jobs:
         with:
           ref: updatefromazuredevops
 
-      # 2. Login to Azure using Service Principal (NOT OIDC)
+      # 2. Login to Azure using AZURE_CREDENTIALS (Service Principal)
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          auth-type: SERVICE_PRINCIPAL
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # 3. Login to Azure Container Registry (ACR)
+      # 3. Login to Azure Container Registry
       - name: Login to ACR
         run: |
           echo "${{ secrets.ACR_PASSWORD }}" | docker login \
@@ -41,7 +37,7 @@ jobs:
             -u ${{ secrets.ACR_NAME }} \
             --password-stdin
 
-      # 4. Build & Push Docker image (latest)
+      # 4. Build & Push Docker Image (latest)
       - name: Build & Push Docker Image
         run: |
           docker build -t ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:latest .
@@ -55,13 +51,13 @@ jobs:
             --name ${{ secrets.AKS_CLUSTER_NAME }} \
             --overwrite-existing
 
-      # 6. Deploy manifests to AKS
+      # 6. Deploy to AKS
       - name: Deploy to AKS
         run: |
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml
 
-      # 7. Restart deployment to force pulling latest image
+      # 7. Restart deployment to force image pull
       - name: Restart deployment
         run: |
           kubectl rollout restart deployment/appseai-docs -n $NAMESPACE
