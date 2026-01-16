@@ -90,7 +90,7 @@ The Token URL is used by Appse.ai to exchange the authorization code for access 
 
 Select the **Base API URL** based on your Zoho account region.
 
-<img src="/img/credentials/zohorecruit/base_url1.png" alt="Zoho Recruit base url" width="700"/>
+<img src="/img/credentials/zohorecruit/base_url.png" alt="Zoho Recruit base url" width="700"/>
 
 <img src="/img/credentials/zohorecruit/baseurl_dropdown.png" alt="Zoho Recruit base url dropdown" width="700"/>
 
@@ -144,7 +144,7 @@ Alternatively, you can:
 
 Sign in with the same account details you used to create a Zoho Recruit account:
 
-<img src="/img/credentials/zohorecruit/sign_in.png" alt="Zoho Recruit api console sign in page" width="700"/>
+<img src="/img/credentials/zohorecruit/sign_in_page.png" alt="Zoho Recruit api console sign in page" width="700"/>
 
 ---
 
@@ -203,7 +203,7 @@ This setting allows the same OAuth credentials to work across Zoho data centers.
 
 Copy the generated **Client ID** and **Client Secret**:
 
-<img src="/img/credentials/zohorecruit/client_credentials.png" alt="client_credentials" width="700"/>
+<img src="/img/credentials/zohorecruit/client_credential.png" alt="client_credentials" width="700"/>
 
 :::warning
 Keep your Client Secret secure and do not share it publicly.
@@ -233,7 +233,7 @@ Click **Save and Authorize** to continue.
 
 Select the checkbox to grant access and click **Accept**.
 
-<img src="/img/credentials/zohorecruit/grant_permissionns.png" alt="Grant Permissions" width="700"/>
+<img src="/img/credentials/zohorecruit/grant_permissions.png" alt="Grant Permissions" width="700"/>
 
 :::info
 Granting permissions allows Appse.ai to access Zoho Recruit data based on the configured scope.
