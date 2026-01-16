@@ -20,6 +20,7 @@ Built-in functions for common data manipulation tasks in APPSeAI expressions.
   "trackingCode": "SHIP-IN-DEL-98765",
   "created_at": "2026-01-14 12:05:20",
   "customerName": "alice johnson",
+  "customerEmail": "alicejohnson@company.com",
   "items": [
     { "name": "Laptop", "price": 1200, "qty": 1 },
     { "name": "Mouse", "price": 25, "qty": 2 },
@@ -75,7 +76,7 @@ Built-in functions for common data manipulation tasks in APPSeAI expressions.
 
 | Function | Expression | Output | Use Case |
 |----------|------------|--------|----------|
-| `uniqueId()` | `{{ uniqueId() }}` | `"a3f9c8e2-7b4c-4f01-9c6e-92a1e7d10c45"` | Generate unique identifier |
+| `uniqueId()` | `{{ uniqueid() }}` | `"a3f9c8e2-7b4c-4f01-9c6e-92a1e7d10c45"` | Generate unique identifier |
 
 ## Math Functions
 
@@ -168,26 +169,11 @@ Built-in functions for common data manipulation tasks in APPSeAI expressions.
 }
 ```
 
-### Example 5: Convert Time to UTC
+### Example 5: Generate Unique Id
 
 ```js
 {
-  "createdAt": "{{ to_iso_utc($payload.created_at) }}"
-}
-```
-
-**Output:**
-```js
-{
-  "createdAt": "2026-01-14T12:05:20Z"
-}
-```
-
-### Example 6: Generate Unique Id
-
-```js
-{
-  "transactionId": "{{ uniqueId() }}",
+  "transactionId": "{{ uniqueid() }}",
 }
 ```
 
@@ -207,6 +193,7 @@ Chain multiple functions together:
 {{ upper(join(' ', $payload.items[*].name)) }}
 {{ round(avg($payload.items[?price > `50`][*].price)) }}
 {{ length(unique($payload.tags)) }}
+{{ split(to_iso_utc(substringBefore($payload.created_at, ' ')), 'T')[0] }}
 ```
 
 ## Functions with Filters
@@ -234,6 +221,8 @@ Use functions on filtered data:
 {{ upper($payload.status) }}
 {{ join(' - ', $payload.tags) }}
 {{ to_string($payload.totalAmount) }}
+{{ to_iso_utc($payload.created_at) }}
+
 ```
 
 ### Validate Data
@@ -241,7 +230,7 @@ Use functions on filtered data:
 {{ length($payload.items) > `0` }}
 {{ contains($payload.email, '@') }}
 {{ starts_with($payload.orderId, 'ORD-') }}
-{{ length(split($payload.orderId, '-')) == 2 }}
+{{ substringAfter($payload.customerEmail, '@') == 'company.com' }}
 ```
 
 ### Get Statistics
