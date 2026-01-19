@@ -173,7 +173,7 @@ Built-in functions for common data manipulation tasks in APPSeAI expressions.
 
 ```js
 {
-  "transactionId": "{{ uniqueid() }}",
+  "transactionId": "{{ uniqueid() }}"
 }
 ```
 
