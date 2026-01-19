@@ -136,7 +136,7 @@ Built-in functions for common data manipulation tasks in APPSeAI expressions.
   "orderId": "{{ upper($payload.orderId) }}",
   "searchKey": "{{ lower($payload.customerName) }}",
   "displayName": "{{ upper($payload.customerName) }}",
-  "productSummary": "{{ join(' | ', $payload.items[*].name) }}"
+  "productSummary": "{{ join(' | ', $payload.items[*].name) }}",
   "orderType": "{{ split($payload.orderId, '-')[0] }}",
   "orderNumber": "{{ split($payload.orderId, '-')[1] }}",
   "invoiceType": "{{ substringBefore($payload.invoiceNumber, '-') }}",
