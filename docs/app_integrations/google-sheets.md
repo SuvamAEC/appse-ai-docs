@@ -7,12 +7,6 @@ Google Sheets is a powerful cloud-based spreadsheet application that allows user
 
 ---
 
-## Setup Credential
-
-Follow the steps below to set up your Google Sheets credential and authorize access from our platform.
-
----
-
 ### Required Fields
 
 You’ll need to provide the following details while creating the credential:
@@ -26,104 +20,178 @@ You’ll need to provide the following details while creating the credential:
 
 ---
 
-### Step-by-Step Guide
+## Setup Credential
 
-#### 1. Add Connection Name
-
-- Enter a meaningful name to identify this credential in our platform.
-- This is only for internal reference.
-
-> **Example**: `Google Sheets – Finance`, `GS Reporting Account`
+Follow the steps below to set up your Google Sheets credential and authorize access from our platform.
 
 ---
 
-#### 2. Create a Google Cloud Project
+## Step 1: Create a Google Cloud Project
 
-- Go to the [Google Cloud Console](https://console.cloud.google.com/).
-- Click on the **Project dropdown** (top-left corner) → **New Project**.
-- Enter a **Project Name** and select a **Billing Account** (if prompted).
-- Click **Create**.
-
----
-
-#### 3. Enable Google Sheets API
-
-- In the Google Cloud Console, navigate to  
-  **API & Services → Library**.
-- Search for **Google Sheets API**.
-- Click on the API and press **Enable**.
-
-This allows your project to interact with Google Sheets.
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
+2. Click the **Project selector** (top-left).
+3. Click **New Project**.
+4. Enter:
+   - **Project name**
+   - **Location**
+5. Click **Create**.
 
 ---
 
-#### 4. Configure OAuth Consent Screen
+## Step 2: Enable Required APIs
 
-- Go to **API & Services → OAuth consent screen**.
-- Select **User Type**:
-  - **External** (recommended for most use cases)
-- Click **Create** and fill in:
-  - **App name**: Your application name
-  - **User support email**: Your email address
-  - **Developer contact information**: Your email address
-- Click **Save and Continue**.
-- Under **Scopes**, add:
-  - `https://www.googleapis.com/auth/spreadsheets`
-- Add **Test Users** (optional for testing environments).
-- Save and continue until the setup is complete.
+### Enable Google Sheets API
 
----
+1. Go to **APIs & Services → Library**.
+2. Search for **Google Sheets API**.
+3. Click **Enable**.
 
-#### 5. Create OAuth 2.0 Client Credentials
+### (Recommended) Enable Google Drive API
 
-- Navigate to **API & Services → Credentials**.
-- Click **Create Credentials** → **OAuth Client ID**.
-- Select **Application Type**:
-  - Choose **Web application**.
-- Provide a **Name** for the OAuth client.
-- Under **Authorized redirect URIs**, add the **Callback API URL** provided in our platform.
+1. In the API Library, search for **Google Drive API**.
+2. Click **Enable**.
 
-> **Important**: The redirect URI must exactly match the Callback API URL shown in the credential form.
-
-- Click **Create**.
+> Enabling Google Drive API allows better file access and spreadsheet management.
 
 ---
 
-#### 6. Copy Client ID and Client Secret
+## Step 3: Configure OAuth Consent Screen
 
-- After creation, a dialog will appear with:
-  - **Client ID**
-  - **Client Secret**
-- Copy these values and paste them into the corresponding fields in our credential form.
-
-> You can also download the `credentials.json` file if required for reference.
+1. Go to **APIs & Services → OAuth consent screen**.
+2. You will see the message:  
+   **“Google Auth Platform not configured yet”**
+3. Click **Get started**.
 
 ---
 
-#### 7. Complete Authorization
+### Step 3.1: App Information
 
-- Click **Save and Authorize** in our platform.
-- A Google login popup will appear.
-- Log in using the Google account that has access to the required Google Sheets.
-- Grant the requested permissions.
+Fill in the following details:
 
-Once authorization is successful, your Google Sheets credential will be connected.
+- **App name**
+- **User support email**
+- **Developer contact email**
+
+Click **Next**.
 
 ---
 
-### Save Your Credential
+### Step 3.2: Audience
 
-After entering all required fields, click **"Save"** to validate and store your credential.
+Select:
 
-- If successful, the credential will show a **check (✓)** icon and is ready for use in workflows.
-- If it fails, an **error (!) icon** will appear. Please verify:
-  - Client ID & Client Secret
-  - Callback API URL
-  - OAuth consent screen configuration
+- **External** (recommended for SaaS or third-party integrations)
+
+Click **Next**.
+
+---
+
+### Step 3.3: Contact Information
+
+- Enter **Developer contact email**
+
+Click **Next**.
+
+---
+
+### Step 3.4: Finish Initial Setup
+
+- Review the entered details
+- Click **Finish**
+
+✅ OAuth consent screen identity is now created  
+⚠ Scopes are **not added yet** — this is expected
+
+---
+
+## Step 4: Add Test Users (Mandatory for External Apps)
+
+> While the app is in **Testing** mode, only test users can authorize it.
+
+1. Stay on **APIs & Services → OAuth consent screen**
+2. Open **Audience**
+3. Under **Test users**, click **Add users**
+4. Add one or more Google email addresses  
+   (Your own email is sufficient)
+5. Click **Save**
+
+---
+
+## Step 5: Configure OAuth Scopes (Data Access)
+
+⚠ Google now manages scopes under **Data Access** (not a separate Scopes tab).
+
+1. Go to **APIs & Services → OAuth consent screen**
+2. Open **Data Access**
+3. Click **Add or remove scopes**
+
+### Add the following scopes:
+
+#### Required
+
+#### Optional (Recommended)
+
+4. Click **Update**
+5. Click **Save**
+
+---
+
+## Step 6: Create OAuth Client ID & Client Secret
+
+1. Go to **APIs & Services → Credentials**
+2. Click **Create Credentials**
+3. Select **OAuth client ID**
+
+### Application Type
+
+- Select **Web application**
+
+### Configure Redirect URI
+
+Add your application’s callback URL:
+
+
+> ⚠️ This **must exactly match** the Callback API URL used in your platform.
+
+4. Click **Create**
+
+---
+
+## Step 7: Copy Credentials
+
+After successful creation, Google will display:
+
+- **Client ID**
+- **Client Secret**
+
+✅ Copy these values and store them securely  
+❗ Do not share them publicly
+
+These values are used while creating the **Google Sheets credential** in your platform.
+
+---
+
+## Step 8: Add Credential in appse ai platform
+
+1. Open the Google Sheets credential form
+2. Use the Default Connection name or Customize as required
+3. Paste the Client ID in the Client ID field
+4. Paste the Client Secret in the Client Secret field
+5. Click on Save & Authorize button
+6. Use the google account credential for further sign in process
+7. Click on Continue to provide access to appse.ai
+
+---
+
+## Next Steps
+
+- Paste the **Client ID** and **Client Secret** into your application’s credential form
+- Use the same **Callback API URL** configured above
+- Click **Save and Authorize** to complete authentication
 
 ---
 
 ## Need Help?
 
-If you face any issues during setup or authorization, please contact our support team at  
+If you face any issues during setup, please contact our support team at  
 **hello@appse.ai**
