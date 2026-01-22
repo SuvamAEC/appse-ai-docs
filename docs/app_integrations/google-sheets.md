@@ -334,6 +334,6 @@ This action is useful when you need to generate spreadsheets dynamically for rep
 
 ---
 
-## Need Help?
-
-If you face any issues during setup, please contact our support team at **hello@appse.ai**
+## Support
+ 
+Need help? Contact our support team at hello@appse.ai
