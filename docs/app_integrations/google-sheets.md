@@ -25,100 +25,118 @@ You’ll need to provide the following details while creating the credential:
 | Callback API URL  | Redirect URI provided by our platform for OAuth authentication |
 
 ---
+## Step 1: Open the Google Sheet Credential Form
+1. Login to the **appse ai** portal.
+2. Click on the Credentials option from the Sidebar menu.
+3. Click Add Credentials button.
+4. Select Google Sheets App from the Applist.
+5. Google Sheets credential form should be displayed
+6. Note the `Callback API URL` value. You will need this later.
 
-## Step 1: Create a Google Cloud Project
+## Step 2: Create a Google Cloud Project
 
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
 2. Click the **Project selector** (top-left).
-   <img src="\img\credentials\google-sheets\GS1.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS1.png"  width="700"/>
 3. Click **New Project**.
-   <img src="\img\credentials\google-sheets\GS2.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS2.png"  width="700"/>
 4. Enter:
    - **Project name**
    - **Location**
 5. Click **Create**.
-   <img src="\img\credentials\google-sheets\GS3.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS3.png"  width="700"/>
 
 ---
 
-## Step 2: Enable Required APIs
+<a id="navigate-to-apis-services"></a>
+
+## Step 3: Navigate to APIs & Services section in Google Cloud Console
+
+1. In the Google Cloud Console header, click the **Google Cloud** text/logo (top-left).
+      <img src="\img\credentials\google-sheets\GS36.png" width="700"/>
+2. From the **Quick access** panel, click **APIs & Services**.
+3. You will now be on the **APIs & Services** dashboard.
+
+---
+
+## Step 4: Enable Required APIs
 
 ### Enable Google Sheets API
 
-1. Go to **APIs & Services → Library**.
-   <img src="\img\credentials\google-sheets\GS4.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
-   <img src="\img\credentials\google-sheets\GS5.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+1. Go to **[APIs & Services](#navigate-to-apis-services) → Library**.
+   <img src="\img\credentials\google-sheets\GS4.png"  width="700"/>
+   <img src="\img\credentials\google-sheets\GS5.png"  width="700"/>
 2. Search for **Google Sheets API**.
-   <img src="\img\credentials\google-sheets\GS6.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS6.png"  width="700"/>
 3. Click **Enable**.
-   <img src="\img\credentials\google-sheets\GS7.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS7.png"  width="700"/>
 
-### (Recommended) Enable Google Drive API
+### Enable Google Drive API (Recommended)
 
 1. In the API Library, search for **Google Drive API**.
 2. Click **Enable**.
-   <img src="\img\credentials\google-sheets\GS8.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS8.png"  width="700"/>
 
 > Enabling Google Drive API allows better file access and spreadsheet management.
 
 ---
 
-## Step 3: Configure OAuth Consent Screen
+## Step 5: Configure OAuth Consent Screen
 
-1. Go to **APIs & Services → OAuth consent screen**.
-   <img src="\img\credentials\google-sheets\GS9.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+1. Go to **[APIs & Services](#navigate-to-apis-services) → OAuth consent screen**.
+   <img src="\img\credentials\google-sheets\GS9.png"  width="700"/>
 2. You will see the message: **“Google Auth Platform not configured yet”**
 3. Click **Get started**.
-   <img src="\img\credentials\google-sheets\GS10.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS10.png"  width="700"/>
 
 ---
 
-### Step 3.1: App Information
+### Step 5.1: App Information
 
 Fill in the following details:
 
 - **App name**
 - **User support email**
-   <img src="\img\credentials\google-sheets\GS11.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS11.png"  width="700"/>
 
 Click **Next**.
 
 ---
 
-### Step 3.2: Audience
+### Step 5.2: Audience
 
 Select:
 
 - **External:** Selecting External allows your Google Sheets integration to be authorized by any Google account, not just users within a single Google Workspace organization.
-   <img src="\img\credentials\google-sheets\GS12.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS12.png"  width="700"/>
 
 Click **Next**.
 
 ---
 
-### Step 3.3: Contact Information
+### Step 5.3: Contact Information
 
 - Enter **Contact email**
-   <img src="\img\credentials\google-sheets\GS13.png" alt="appse ai microsoft outlook admin grants permissions" width="700"/>
+   <img src="\img\credentials\google-sheets\GS13.png"  width="700"/>
 
 Click **Next**.
 
 ---
 
-### Step 3.4: Finish Initial Setup
+### Step 5.4: Finish Initial Setup
 
 - Make sure to check the box “I agree to the Google API Services: User Data Policy” to proceed. This confirms that your application complies with Google’s data usage and privacy requirements and is mandatory to continue the OAuth setup.
 - Click **Continue**
 - Click **Create**
-   <img src="\img\credentials\google-sheets\GS14.png" width="700"/>
+   <img src="\img\credentials\google-sheets\GS14.png"  width="700"/>
 
 ---
 
-## Step 4: Add Test Users
+## Step 6: Add Test Users
 
-1. Go to APIs & Services → OAuth consent screen.
+1. Go to **[APIs & Services](#navigate-to-apis-services)** → OAuth consent screen.
 2. Open the Audience section.
-   <img src="\img\credentials\google-sheets\GS15.png" width="700"/>
+   <img src="\img\credentials\google-sheets\GS38.png" width="700"/>
 3. Under Test users, click Add users.
 4. Add one or more Google email addresses
 5. Only users added here will be able to successfully authorize and validate the credential.
@@ -127,15 +145,15 @@ Click **Next**.
 
 ---
 
-## Step 5: Configure OAuth Scopes
+## Step 7: Configure OAuth Scopes
 
-1. Go to **APIs & Services → OAuth consent screen**
+1. Go to **[APIs & Services](#navigate-to-apis-services) → OAuth consent screen**
 2. Open **Data Access**
    <img src="\img\credentials\google-sheets\GS17.png" width="700"/>
 3. Click **Add or remove scopes**
    <img src="\img\credentials\google-sheets\GS18.png" width="700"/>
 
-   ### Add the following scopes:
+   ### Select the following scopes:
 
    #### Required
    https://www.googleapis.com/auth/spreadsheets
@@ -151,13 +169,13 @@ Click **Next**.
    <img src="\img\credentials\google-sheets\GS22.png" width="700"/>
 ---
 
-## Step 6: Create OAuth Client ID & Client Secret
+## Step 8: Create OAuth Client ID & Client Secret
 
-1. Go to **APIs & Services → Credentials**
+1. Go to **[APIs & Services](#navigate-to-apis-services) → Credentials**
    <img src="\img\credentials\google-sheets\GS23.png" width="700"/>
 2. Click **Create Credentials**
 3. Select **OAuth client ID**
-   <img src="\img\credentials\google-sheets\GS24.png" width="700"/>
+   <img src="\img\credentials\google-sheets\GS39.png" width="700"/>
 
 ### Application Type
 
@@ -165,20 +183,20 @@ Click **Next**.
 - Add **Name**
    <img src="\img\credentials\google-sheets\GS25.png" width="700"/>
 
-### Configure Redirect URI
+### Configure Authorized Redirect URI
 
-Add your application’s callback URL:
+Add our application’s callback URL:
 
-> This **must exactly match** the Callback API URL used in your platform.
-> Copy this from the Google Sheets credential form from the platform.
+> This **must exactly match** the Callback API URL used in our platform.
+> Get this from the Google Sheets credential form as mentioned in Step 1.
    <img src="\img\credentials\google-sheets\GS_credform.png" width="700"/>
-   <img src="\img\credentials\google-sheets\GS26.png" width="700"/>
+   <img src="\img\credentials\google-sheets\GS37.png" width="700"/>
 
 4. Click **Create**
 
 ---
 
-## Step 7: Copy Credentials
+## Step 9: Credential Generation
 
 After successful creation, Google will display:
 
@@ -191,15 +209,15 @@ Also, you can download the JSON file clicking on the Download JSON button to sto
    <img src="\img\credentials\google-sheets\GS28.png" width="700"/>
 ---
 
-## Step 8: Add Credential in appse ai platform
+## Step 10: Add Credential in appse ai platform
 
-1. Open the Google Sheets credential form
+1. Navigate back to Google Sheets credential form
 2. Use the Default Connection name or customize as required
 3. Paste the Client ID in the Client ID field
 4. Paste the Client Secret in the Client Secret field
 5. Click on Save & Authorize button
    <img src="\img\credentials\google-sheets\GS29.png" width="700"/>
-6. Provide the Google account email
+6. Provide the Google account email (Added as test user in Step 6)
    <img src="\img\credentials\google-sheets\GS30.png" width="700"/>
 7. Provide the password 
    <img src="\img\credentials\google-sheets\GS31.png" width="700"/>
@@ -212,7 +230,7 @@ Also, you can download the JSON file clicking on the Download JSON button to sto
    <img src="\img\credentials\google-sheets\GS34.png" width="700"/>
 ---
 
-## Actions
+## Google Sheet Actions
 1. Get Rows from Google Sheet
 2. Create New Sheet in Spreadsheet
 3. Append Row to Google Sheet
@@ -263,7 +281,7 @@ This action is commonly used to **read spreadsheet data**, **fetch records**, or
 
 ## 2. Create New Sheet in Spreadsheet
 
-The **Create New Sheet in Spreadsheet** action creates a **new sheet (tab)** inside an existing Google Spreadsheet.  
+The **Create New Sheet in Spreadsheet** action, creates a **new sheet (tab)** inside an existing Google Spreadsheet.  
 This action is commonly used to **initialize data structures**, **generate reports**, or **prepare sheets for downstream write operations**.
 
 ---
