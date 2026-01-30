@@ -53,7 +53,7 @@ Click on **Add credentials**, search for Zoho Books and select it to create a ne
 
 <img src="/img/credentials/zoho-books/add_new_cred.png" alt="Create a new credential" width="700"/>
 
-Or you can also do it while creating workflow by clicking on **Set a new credential**.
+Or you can also do it while creating workflow by clicking on **Create a new credential**.
 
 <img src="/img/credentials/zoho-books/new_credpage.png" alt="Create a new credential" width="700"/>
 
