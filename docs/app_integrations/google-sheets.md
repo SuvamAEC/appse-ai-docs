@@ -1,6 +1,6 @@
 ---
 title: "Google Sheets"
-slug: /app-integrations/google-sheets
+slug: /app-integrations/googlesheets
 ---
 
 Google Sheets is a powerful cloud-based spreadsheet application that allows users to create, edit, and collaborate on spreadsheets in real time. With **appse ai**, you can securely connect your Google Sheets account, automate data operations, and seamlessly integrate spreadsheet data into your workflows.
