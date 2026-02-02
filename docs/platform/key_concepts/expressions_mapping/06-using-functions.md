@@ -211,8 +211,8 @@ Built-in functions for common data manipulation tasks in APPSeAI expressions.
   "currentTime": "{{ now() }}",
   "isOrderPast": "{{ get_unix_timestamp($payload.created_at) < get_unix_timestamp(now()) }}"
   "createdAt": "{{ to_iso_utc($payload.created_at) }},
-  "created_at": "{{ get_date_only($payload.updated_at) }},
-  "created_at": "{{ get_time_only($payload.updated_at) }},
+  "created_at": "{{ get_date_only($payload.updated_at) }}",
+  "created_at": "{{ get_time_only($payload.updated_at) }}",
 }
 ```
 
