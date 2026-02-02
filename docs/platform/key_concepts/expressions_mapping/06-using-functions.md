@@ -210,7 +210,7 @@ Built-in functions for common data manipulation tasks in APPSeAI expressions.
   "orderCreatedAtEpoch": "{{ get_unix_timestamp($payload.created_at) }}",
   "currentTime": "{{ now() }}",
   "isOrderPast": "{{ get_unix_timestamp($payload.created_at) < get_unix_timestamp(now()) }}"
-  "createdAt": "{{ to_iso_utc($payload.created_at) }},
+  "createdAt": "{{ to_iso_utc($payload.created_at) }}",
   "created_at": "{{ get_date_only($payload.updated_at) }}",
   "created_at": "{{ get_time_only($payload.updated_at) }}",
 }
@@ -288,10 +288,26 @@ Use functions on filtered data:
 ### Validate Data
 
 ```js
-{{ length($payload.items) > `0` }}
-{{ contains($payload.email, "@") }}
-{{ starts_with($payload.orderId, "ORD-") }}
-{{ substringAfter($payload.customerEmail, "@") == "company.com" }}
+{
+  {
+    length($payload.items) > `0`;
+  }
+}
+{
+  {
+    contains($payload.email, "@");
+  }
+}
+{
+  {
+    starts_with($payload.orderId, "ORD-");
+  }
+}
+{
+  {
+    substringAfter($payload.customerEmail, "@") == "company.com";
+  }
+}
 ```
 
 ### Get Statistics
