@@ -1,6 +1,6 @@
 ---
 title: "Google Sheets"
-slug: /app-integrations/google-sheets
+slug: /app-integrations/googlesheets
 ---
 
 Google Sheets is a powerful cloud-based spreadsheet application that allows users to create, edit, and collaborate on spreadsheets in real time. With **appse ai**, you can securely connect your Google Sheets account, automate data operations, and seamlessly integrate spreadsheet data into your workflows.
@@ -279,6 +279,16 @@ This action is commonly used to **read spreadsheet data**, **fetch records**, or
 
 ---
 
+### Example Configuration
+   <img src="\img\credentials\google-sheets\GS40.png" width="700"/>
+
+---
+
+### Result
+   <img src="\img\credentials\google-sheets\GS50.png" width="700"/>
+
+---
+
 ## 2. Create New Sheet in Spreadsheet
 
 The **Create New Sheet in Spreadsheet** action, creates a **new sheet (tab)** inside an existing Google Spreadsheet.  
@@ -294,6 +304,16 @@ This action is commonly used to **initialize data structures**, **generate repor
 | Sheet Name | The name of the new sheet (tab) to be created. This field appears dynamically after adding an item under **Sheet Creation Requests** |
 
 > **Note:** You can create multiple sheets by adding multiple items under Sheet Creation Requests.
+
+---
+
+### Example Configuration
+   <img src="\img\credentials\google-sheets\GS41.png" width="700"/>
+
+---
+
+### Result
+   <img src="\img\credentials\google-sheets\GS42.png" width="700"/>
 
 ---
 
@@ -317,6 +337,18 @@ This action is commonly used to **insert new records**, **log workflow outputs**
 
 ---
 
+### Example Configuration
+   <img src="\img\credentials\google-sheets\GS43.png" width="700"/>
+
+   <img src="\img\credentials\google-sheets\GS44.png" width="700"/>
+
+---
+
+### Result
+   <img src="\img\credentials\google-sheets\GS45.png" width="700"/>
+
+---
+
 ## 4. Update Row in Google Sheet
 
 This action allows you to update an existing row in a Google Sheet by matching a specific value in a chosen column and then updating one or more column values in that row.
@@ -331,6 +363,16 @@ This action allows you to update an existing row in a Google Sheet by matching a
 | **Sheet Name** | The name of the sheet (tab) within the selected Google Spreadsheet where the update operation will be performed. |
 | **Row Match Condition** | Defines the criteria used to identify the exact row that should be updated.<br />**Match Column** – Enter the exact column header name (for example: `Employee ID`, `Name`).<br />**Match Value** – Enter the value to match against the selected column. The row containing this value will be identified and updated. |
 | **Updated Column Values** | Clicking **Add Additional Property** displays a key–value pair UI. Each key represents a column header, and the corresponding value represents the new data to be updated in that column. |
+
+---
+
+### Example Configuration
+   <img src="\img\credentials\google-sheets\GS46.png" width="700"/>
+
+---
+
+### Result
+   <img src="\img\credentials\google-sheets\GS47.png" width="700"/>
 
 ---
 
@@ -349,6 +391,16 @@ This action is useful when you need to generate spreadsheets dynamically for rep
 | **Locale** *(Optional)* | Specifies the locale for the spreadsheet (for example: `en_US`). The locale determines default formatting such as date formats, number separators, and currency symbols. |
 | **Recalculation Frequency** *(Optional)* | Determines how frequently spreadsheet formulas are recalculated automatically. Select an appropriate option based on how often your data changes. |
 | **Initial Sheets** *(Optional)* | Allows you to define one or more sheets (tabs) that should be created when the spreadsheet is generated.<br />**Sheet Name** Enter a name for the sheet (for example: `Sheet1`, `Leads`, `Data`)<br />**Hidden Sheet** Enable this option to create the sheet in a hidden state. Hidden sheets will not be visible by default to users opening the spreadsheet (for example: `true`, `false`)|
+
+---
+
+### Example Configuration
+   <img src="\img\credentials\google-sheets\GS48.png" width="700"/>
+
+---
+
+### Result
+   <img src="\img\credentials\google-sheets\GS49.png" width="700"/>
 
 ---
 
