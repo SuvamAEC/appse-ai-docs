@@ -4,9 +4,6 @@ description: Step-by-step guide to set up Best Buy credentials for Appse.ai inte
 slug: /app-integrations/best-buy/
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Introduction
 
 Best Buy is a leading consumer electronics retailer offering a comprehensive API platform for developers and businesses to integrate Best Buy's product catalog, pricing, and inventory data into their applications. By integrating Best Buy with Appse.ai, you can automate product searches, monitor prices, check inventory availability, and build powerful e-commerce workflows that leverage Best Buy's extensive product database.
@@ -111,7 +108,7 @@ After saving your credentials, Appse.ai will verify the connection to Best Buy's
 
 ## Using Best Buy in Workflows
 
-Once your credential is configured, you can use Best Buy nodes in your Appse ai workflows to:
+Once your credential is configured, you can use Best Buy nodes in your Appse.ai workflows to:
 
 - Search for products by keyword, category, or SKU
 - Retrieve detailed product information
