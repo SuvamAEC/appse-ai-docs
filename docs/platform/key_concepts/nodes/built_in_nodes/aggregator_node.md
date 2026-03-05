@@ -38,8 +38,8 @@ This mode aggregates entire records into a single array wrapped inside a defined
 |------------------|------------|
 | Output Field Name | Specifies the wrapper field that will contain the aggregated array. Use any custom name as per your requirement |
 | Fields to Include | Determines how fields from each input record are included. The dropdown provides three options: `All Fields`, `Specified Fields`, and `All Fields Except` |
-| Specified Fields  | Enter the fields you want to include, separated by commas. This option appears only when `Specified Fields` is selected for the Fields to Include field |
-| Fields to Exclude | Enter the fields you want to exclude, separated by commas. This option appears only when `All Fields Except` is selected for the Fields to Include field |
+| Specified Fields  | Enter the exact fieldname(s) you want to include from input data packet, separated by commas. This option appears only when `Specified Fields` is selected for the Fields to Include field |
+| Fields to Exclude | Enter the exact fieldname(s) you want to exclude from input data packet, separated by commas. This option appears only when `All Fields Except` is selected for the Fields to Include field |
 
 ### All Item Data – Example
 
