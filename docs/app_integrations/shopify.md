@@ -9,7 +9,7 @@ Shopify is a powerful e-commerce platform that enables businesses to build, cust
 
 ## Authentication Methods
 
-Appse AI supports two authentication methods for connecting your Shopify store. Choose the one that best fits your setup:
+Appse AI supports two authentication methods: API Key and OAuth 2.0. Among these, OAuth 2.0 is the recommended option.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
