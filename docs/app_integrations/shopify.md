@@ -15,7 +15,177 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="api-key" label="API Key" default>
+  <TabItem value="oauth2" label="OAuth 2.0" default>
+
+## Setup Credential — OAuth 2.0
+
+Follow the steps below to connect your Shopify store to appse ai using OAuth 2.0. This method uses a **Client ID** and **Client Secret** obtained from the Shopify Dev Dashboard.
+
+### Prerequisites
+
+Before starting, make sure:
+
+- You have access to a Shopify store admin account.
+- You can log in to the Shopify admin portal.
+
+### Required Fields
+
+You'll be asked to fill in the following details:
+
+| Field           | Description                                                                              |
+|-----------------|------------------------------------------------------------------------------------------|
+| Connection Name | A name to help you identify this connection.                                             |
+| Store Domain    | The domain of your Shopify store (e.g., `newstore`).                     |
+| Client ID       | Obtained from your app's Settings page in the Shopify Dev Dashboard.                    |
+| Client Secret   | Obtained from your app's Settings page in the Shopify Dev Dashboard.                    |
+| Scope           | The OAuth 2.0 permission scopes for your credential.                                     |
+| Callback URL    | Auto-filled automatically. This field is non-editable and pre-populated by appse ai. Use this URL to configure the Redirect URL while creating the Shopify App.   |
+
+---
+
+### Step-by-Step Guide
+
+#### Step 1: Log in to Shopify Admin
+
+Open [Shopify Admin](https://admin.shopify.com) and log in using your Shopify admin credentials.
+
+---
+
+#### Step 2: Open Apps Settings
+
+From the left-hand menu, click **Settings** at the bottom.
+<img src="\img\credentials\shopify\s1.png"  width="700"/>
+
+Then, from the Settings menu, click **Apps**.
+<img src="\img\credentials\shopify\s2.png"  width="700"/>
+
+---
+
+#### Step 3: Open Develop Apps
+
+On the Apps page, click **"Develop apps"** from the top-right section.
+<img src="\img\credentials\shopify\s3.png"  width="700"/>
+
+---
+
+#### Step 4: Open the Dev Dashboard
+
+Click **"Build apps in Dev Dashboard"**.
+<img src="\img\credentials\shopify\s4.png"  width="700"/>
+
+---
+
+#### Step 5: Create a New App
+
+In the Dev Dashboard, click **"Create app"** from the top-right section.
+<img src="\img\credentials\shopify\s5.png"  width="700"/>
+
+You will see the **"Start from Dev Dashboard"** section.
+
+Enter a valid app name (must be within 30 characters), then click **"Create"**.
+<img src="\img\credentials\shopify\s6.png"  width="700"/>
+
+---
+
+#### Step 6: App URL
+
+In the **App URL** field, no modification is required since this app is intended for your organization's use only.
+
+---
+
+#### Step 7: Configure API Scopes
+
+Go to the **Admin API scope configuration** section.
+Select the scopes relevant to the APIs you want to use — such as customer, order, or product scopes — then **Save** the configuration. You can also use the default scopes displayed in the Shopify Credential form in appse ai platform.
+<img src="\img\credentials\shopify\s7.png"  width="700"/>
+
+---
+
+#### Step 8: Configure the Redirect URL
+
+In the **Redirect URL** section, add the Callback URL exactly as displayed in the Shopify Credential form in appse ai platform:
+
+**For example**
+```
+https://embedded-ui.appse.ai/oauth-callback.html
+```
+<img src="\img\credentials\shopify\s8.png"  width="700"/>
+
+> ⚠️ Make sure the URL is entered **exactly** as shown in credential form, including `https://`. This URL is required for appse ai to complete the OAuth 2.0 authorization flow.
+
+---
+
+#### Step 9: Release the App Version
+
+Click **"Release"**.
+<img src="\img\credentials\shopify\s9.png"  width="700"/>
+
+You will be prompted for an app version value. Enter a version (e.g., `v1`) to keep track of your app versioning, then click **"Release"** again.
+
+After this, the app version will become active.
+<img src="\img\credentials\shopify\s10.png"  width="700"/>
+
+---
+
+#### Step 10: Get Client ID and Client Secret
+
+Click **"Settings"** from the left menu inside your app.
+<img src="\img\credentials\shopify\s11.png"  width="700"/>
+
+You will see:
+
+- **Client ID** — Copy this directly.
+- **Client Secret** — Click the copy button next to it.
+<img src="\img\credentials\shopify\s12.png"  width="700"/>
+
+> ⚠️ Store both values securely. You will need them to complete the credential setup in appse ai.
+
+---
+
+#### Step 11: Configure the Credential Form in appse ai
+
+1. **Enter the Shop Subdomain**  
+   From the left-hand menu, click **Settings** at the bottom.
+  <img src="\img\credentials\shopify\s1.png"  width="700"/>
+
+   The Shop Subdomain is displayed at the top of the sidebar menu.
+   <img src="\img\credentials\shopify\s19.png"  width="700"/>
+   > **Example:** If your Shopify subdomain looks like **marcostore-9454.myshopify.com**, you only need to paste **marcostore-9454** in the credential form. 
+
+   <img src="\img\credentials\shopify\s14.png" width="700"/>
+
+2. **Enter the Client Credentials**  
+   Fill in the following details:
+   - **Client ID**
+   - **Client Secret**  
+   <img src="\img\credentials\shopify\s13.png" width="700"/>
+
+3. **Save the Configuration**  
+   Click on the **"Save"** button. A popup will appear prompting you to log in using your Shopify account.
+
+4. **Authenticate Your Shopify Account**  
+   Enter your Shopify Admin Account's:
+   - **Email Address**
+   - **Password**
+   <img src="\img\credentials\shopify\s17.png" width="700"/>
+
+5. **Install the App**  
+   After logging in, proceed to install the app you developed.
+   A warning maybe displayed stating that the app hasn’t been reviewed. This is expected for custom or private apps.
+
+   <img src="\img\credentials\shopify\s15.png" width="700"/>
+
+6. **Confirmation**  
+   Once the installation is successful:
+   - The credentials will be authenticated  
+   - Saved securely  
+   - Displayed on the **Credentials** page with a green tick that confirms that the credential is successfully validated
+
+   You can now use the credential for the required workflow integrations.  
+   <img src="\img\credentials\shopify\s18.png" width="700"/>
+
+  </TabItem>
+    <TabItem value="api-key" label="API Key">
 
 ## Setup Credential — API Key
 
@@ -118,140 +288,6 @@ Click the **"Reveal token once"** button. Copy the token and store it somewhere 
 Enter the **Store Subdomain** and **Admin API Access Token** in appse ai and click **"Save"**.
 
 If you followed all the steps correctly, your credential will be connected successfully.
-
-  </TabItem>
-  <TabItem value="oauth2" label="OAuth 2.0">
-
-## Setup Credential — OAuth 2.0
-
-Follow the steps below to connect your Shopify store to appse ai using OAuth 2.0. This method uses a **Client ID** and **Client Secret** obtained from the Shopify Dev Dashboard.
-
-### Prerequisites
-
-Before starting, make sure:
-
-- You have access to a Shopify store admin account.
-- You can log in to the Shopify admin portal.
-
-### Required Fields
-
-You'll be asked to fill in the following details:
-
-| Field           | Description                                                                              |
-|-----------------|------------------------------------------------------------------------------------------|
-| Connection Name | A name to help you identify this connection.                                             |
-| Store Domain    | The domain of your Shopify store (e.g., `newstore`).                     |
-| Client ID       | Obtained from your app's Settings page in the Shopify Dev Dashboard.                    |
-| Client Secret   | Obtained from your app's Settings page in the Shopify Dev Dashboard.                    |
-| Scope           | The OAuth 2.0 permission scopes for your credential.                                     |
-| Callback URL    | Auto-filled automatically. This field is non-editable and pre-populated by appse ai.    |
-
----
-
-### Step-by-Step Guide
-
-#### Step 1: Log in to Shopify Admin
-
-Open [Shopify Admin](https://admin.shopify.com) and log in using your Shopify admin credentials.
-
----
-
-#### Step 2: Open Apps Settings
-
-From the left-hand menu, click **Settings** at the bottom.
-<img src="\img\credentials\shopify\s1.png"  width="700"/>
-
-Then, from the Settings menu, click **Apps**.
-<img src="\img\credentials\shopify\s2.png"  width="700"/>
-
----
-
-#### Step 3: Open Develop Apps
-
-On the Apps page, click **"Develop apps"** from the top-right section.
-<img src="\img\credentials\shopify\s3.png"  width="700"/>
-
----
-
-#### Step 4: Open the Dev Dashboard
-
-Click **"Build apps in Dev Dashboard"**.
-<img src="\img\credentials\shopify\s4.png"  width="700"/>
-
----
-
-#### Step 5: Create a New App
-
-In the Dev Dashboard, click **"Create app"** from the top-right section.
-<img src="\img\credentials\shopify\s5.png"  width="700"/>
-
-You will see the **"Start from Dev Dashboard"** section.
-
-Enter a valid app name (must be within 30 characters), then click **"Create"**.
-<img src="\img\credentials\shopify\s6.png"  width="700"/>
-
----
-
-#### Step 6: App URL
-
-In the **App URL** field, no modification is required since this app is intended for your organization's use only.
-
----
-
-#### Step 7: Configure API Scopes
-
-Go to the **Admin API scope configuration** section.
-
-Select the scopes relevant to the APIs you want to use — such as customer, order, or product scopes — then **Save** the configuration.
-<img src="\img\credentials\shopify\s7.png"  width="700"/>
-
----
-
-#### Step 8: Configure the Redirect URL
-
-In the **Redirect URL** section, add the following callback URL exactly as shown:
-
-```
-https://embedded-ui.appse.ai/oauth-callback.html
-```
-<img src="\img\credentials\shopify\s8.png"  width="700"/>
-
-> ⚠️ Make sure the URL is entered **exactly** as shown above, including `https://`. This URL is required for appse ai to complete the OAuth 2.0 authorization flow.
-
----
-
-#### Step 9: Release the App Version
-
-Click **"Release"**.
-<img src="\img\credentials\shopify\s9.png"  width="700"/>
-
-You will be prompted for an app version value. Enter a version (e.g., `v1`) to keep track of your app versioning, then click **"Release"** again.
-
-After this, the app version will become active.
-<img src="\img\credentials\shopify\s10.png"  width="700"/>
-
----
-
-#### Step 10: Get Client ID and Client Secret
-
-Click **"Settings"** from the left menu inside your app.
-<img src="\img\credentials\shopify\s11.png"  width="700"/>
-
-You will see:
-
-- **Client ID** — Copy this directly.
-- **Client Secret** — Click the copy button next to it.
-<img src="\img\credentials\shopify\s12.png"  width="700"/>
-
-> ⚠️ Store both values securely. You will need them to complete the credential setup in appse ai.
-
----
-
-#### Step 11: Add the Fields to Appse AI
-
-Enter the **Client ID** and **Client Secret** in appse ai and click **"Save"**.
-
-If you followed all the steps correctly, your credential will be connected successfully via OAuth 2.0.
 
   </TabItem>
 </Tabs>
