@@ -13,14 +13,14 @@ description: Learn what AI Credits are, how they are consumed by AI nodes and Ag
 
 Each plan includes a fixed number of AI Credits that reset every month.
 
-| Plan | Monthly AI Credits |
-|------|--------------------|
-| Free | 20 credits |
-| Starter | 1,000 credits |
-| Growth | 1,000 credits |
-| Enterprise | 1,500 credits |
+| Plan       | Monthly AI Credits |
+| ---------- | ------------------ |
+| Free       | 20 credits         |
+| Starter    | 1,000 credits      |
+| Growth     | 1,000 credits      |
+| Enterprise | 1,500 credits      |
 
-You can monitor your current usage at any time by navigating to **Subscriptions → Billing → Usage → AI Credits**.
+You can monitor your current usage at any time by navigating to **Subscriptions → Usage → AI Credits**.
 
 <img src="/img/platform/billing/ai-credits-usage.png" alt="AI Credits usage screen showing exhausted state" width="700"/>
 
@@ -44,11 +44,11 @@ If you need more AI Credits before your monthly allowance resets, you can purcha
 
 ### Available Credit Packs
 
-| Pack | Credits | Price |
-|------|---------|-------|
-| Starter Pack | 4,000 credits | $20 |
-| Growth Pack | 10,000 credits | $50 (Recommended) |
-| Pro Pack | 20,000 credits | $100 |
+| Pack         | Credits        | Price             |
+| ------------ | -------------- | ----------------- |
+| Starter Pack | 4,000 credits  | $20               |
+| Growth Pack  | 10,000 credits | $50 (Recommended) |
+| Pro Pack     | 20,000 credits | $100              |
 
 :::info
 Credit packs are **not** monthly. Purchased credits are valid until your annual subscription renews — they do not roll over to the next subscription period.
@@ -63,7 +63,7 @@ Credits are always drawn in the following order:
 
 ### How to Buy a Credit Pack
 
-1. Navigate to **Subscriptions → Billing → Usage** in the platform.
+1. Navigate to **Subscriptions → Usage** in the platform.
 2. Scroll to the **AI Credits** section and click **Buy more**.
 3. Select your preferred credit pack from the dropdown.
 4. Review the **Total due today** summary, agree to the Terms & Conditions, and click **Proceed to Checkout**.
@@ -75,4 +75,3 @@ Credits are always drawn in the following order:
 ## Support
 
 If you have questions about your AI Credits or billing, reach out to our support team at [hello@appse.ai](mailto:hello@appse.ai)
-

@@ -11,14 +11,14 @@ description: Learn what Active Flows are, how the concurrent flow limit works, a
 
 ## Flow Limits by Plan
 
-| Plan       | Active Flows Included                                    |
-| ---------- | -------------------------------------------------------- |
-| Free       | Not included — workflow activation requires a paid plan  |
-| Starter    | 3 flows                                                  |
-| Growth     | 5 flows                                                  |
-| Enterprise | 5 flows                                                  |
+| Plan       | Active Flows Included                                   |
+| ---------- | ------------------------------------------------------- |
+| Free       | Not included — workflow activation requires a paid plan |
+| Starter    | 3 flows                                                 |
+| Growth     | 5 flows                                                 |
+| Enterprise | 5 flows                                                 |
 
-You can monitor your current active flow usage at any time by navigating to **Subscriptions → Billing → Usage → Active Flows**.
+You can monitor your current active flow usage at any time by navigating to **Subscriptions → Usage → Active Flows**.
 
 <img src="/img/platform/billing/active-flows-usage.png" alt="Active flows usage screen" width="700"/>
 
@@ -60,7 +60,7 @@ Unlike AI Credit packs, extra flows are a **recurring add-on** — not a one-tim
 
 ### How to Buy Extra Flows
 
-1. Navigate to **Subscriptions → Billing → Usage** in the platform.
+1. Navigate to **Subscriptions → Usage** in the platform.
 2. Scroll to the **Active Flows** section and click **Buy more**.
 3. Enter the number of additional flows you need.
 4. Review the **Due Today** and **From Next Renewal** cost summary.
@@ -73,4 +73,3 @@ Unlike AI Credit packs, extra flows are a **recurring add-on** — not a one-tim
 ## Support
 
 If you have questions about your flow limits or billing, reach out to our support team at [hello@appse.ai](mailto:hello@appse.ai)
-
