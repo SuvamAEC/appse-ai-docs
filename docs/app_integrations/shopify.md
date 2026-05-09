@@ -9,7 +9,7 @@ Shopify is a powerful e-commerce platform that enables businesses to build, cust
 
 ## Authentication Methods
 
-Appse AI supports two authentication methods: API Key and OAuth 2.0. Among these, OAuth 2.0 is the recommended option.
+**appse ai** supports two authentication methods: API Key and OAuth 2.0. Among these, OAuth 2.0 is the recommended option.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -283,7 +283,7 @@ Click the **"Reveal token once"** button. Copy the token and store it somewhere 
 
 ---
 
-#### Step 7: Add the Fields to Appse AI
+#### Step 7: Add the Fields to appse ai
 
 Enter the **Store Subdomain** and **Admin API Access Token** in appse ai and click **"Save"**.
 
