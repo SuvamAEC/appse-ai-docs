@@ -48,7 +48,13 @@ Go to the [Zoho Developer Console](https://api-console.zoho.com) and sign in wit
 
 #### 3. Register a New Application
 
-Click **Add Client** and select **Server-based Application** as the client type. Fill in the required application details. Upon creation, your **Client ID** and **Client Secret** will be generated and displayed on the application details page. Copy both values.
+Click **Add Client**
+<img src="/img/credentials/zohopos/add-client-zoho-pos.png" alt="appse ai Zoho POS Add Client" width="700"/>
+ select **Server-based Application** as the client type. Fill in the required application details.
+ 
+ <img src="/img/credentials/zohopos/create-server-based-app-zohopos.png" alt="appse ai Zoho POS serverbased app create" width="700"/>
+ 
+  Upon creation, your **Client ID** and **Client Secret** will be generated and displayed on the application details page. Copy both values.
 
 <img src="/img/credentials/zohopos/click-client-secret.png" alt="appse ai Zoho POS Client Details" width="700"/>
 
