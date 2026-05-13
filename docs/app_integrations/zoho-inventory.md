@@ -162,7 +162,7 @@ If successful, appse ai stores the credential and the Zoho Inventory connection 
 
 ## Triggers
 
-Here is the list of available triggers in WooCommerce:
+Here is the list of available triggers in Zoho Inventory:
 
 | Trigger                  | Description                                                       |
 | ------------------------ | ----------------------------------------------------------------- |
@@ -170,7 +170,7 @@ Here is the list of available triggers in WooCommerce:
 
 ## Actions
 
-Here is the list of available actions in WooCommerce:
+Here is the list of available actions in Zoho Inventory:
 
 | Action                           | Description                                                               |
 | -------------------------------- | ------------------------------------------------------------------------- |
