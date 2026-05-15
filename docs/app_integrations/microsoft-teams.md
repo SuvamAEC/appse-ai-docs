@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Teams"
-slug : /app-integrations/microsoft-teams/
+slug: /app-integrations/microsoft-teams/
 ---
 
 **Microsoft Teams** is a collaboration platform that integrates workplace chat, meetings, file storage, and application integration. It allows teams to communicate and collaborate effectively, making it a central hub for teamwork within organizations.
@@ -11,7 +11,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Setup Credential
-
 
 ### 1. Choose Your Account
 
@@ -51,6 +50,7 @@ If the account you selected was a **non-admin account** then:
 - A message will prompt the non-admin user to reach out to their **organization's admin** to grant consent for the required permissions.
 
 ##### Admin Consent for Non-Admin Accounts
+
 To allow non-admin users to connect, the organization's **admin** must grant consent for the app to access the necessary permissions:
 
 - The admin can do this by logging into appse ai and connecting their **Teams account**.
@@ -64,9 +64,10 @@ To allow non-admin users to connect, the organization's **admin** must grant con
 :::tip
 
 - **Non-Admin User Access**: If a non-admin cannot connect, verify that the admin has provided consent for the necessary permissions as described above.
-:::
+  :::
 
 ## Conclusion
+
 This OAuth 2.0 integration ensures that both admin and non-admin users can securely connect their Microsoft accounts to appse ai, with proper permission management through the consent flow.
 
 ---
