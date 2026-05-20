@@ -110,6 +110,35 @@ In appse ai, enter the following details:
 
 ---
 
+#### 6. Find Audience ID
+
+Most Mailchimp actions in appse ai require an **Audience ID** to identify the target audience/list.
+
+To find your Audience ID in Mailchimp:
+
+- Navigate to **Audience** from the left sidebar.
+
+<img src="/img/credentials/mailchimp/audience-tab.png" alt="Mailchimp Audience menu" width="700"/>
+
+- Click on **three-dot menu (...)**
+
+<img src="/img/credentials/mailchimp/audience-three-dot-menu.png" alt="Mailchimp All Contacts page" width="700"/>
+
+- Click on the **Audience Settings** dropdown.
+
+<img src="/img/credentials/mailchimp/audience-settings.png" alt="Mailchimp Audience Settings dropdown" width="700"/>
+
+- Locate the **Audience ID**
+- Copy the **Audience ID**
+
+<img src="/img/credentials/mailchimp/audience-id.png" alt="Mailchimp Audience ID" width="700"/>
+
+:::info
+The Audience ID is required in most Mailchimp actions such as Create Contact and Add or Remove Contact Tags.
+:::
+
+---
+
 ## Actions
 
 Here is the list of available actions in Mailchimp:
