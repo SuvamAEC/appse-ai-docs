@@ -50,3 +50,9 @@ If you try to **import a workflow** while another workflow is already present on
 <img src="/img/platform/additional-options/import-or-export-workflows/8-replace-current-workflow.png" alt="replace current workflow screen" width="700"/>
 
 ---
+
+## Support
+
+Need help? Contact our support team at [hello@appse.ai](mailto:hello@appse.ai)
+
+---
