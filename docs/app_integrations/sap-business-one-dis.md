@@ -84,7 +84,7 @@ Fill in the following required fields once the agent is selected:
 
 `Microsoft SQL (Legacy)`,`Microsoft SQL 2012`,`Microsoft SQL 2014`,`Microsoft SQL 2016`,`Microsoft SQL 2017`,`Microsoft SQL 2019`,`SAP HANA`
 
-<img src="/img/credentials/sap-business-one-dis/databasetype.png" alt="databasetype" width="700"/>
+<img src="/img/credentials/sap-business-one-dis/databasetype.png" alt="SAP Business One database type dropdown showing available SQL options" width="700"/>
 
 ## Actions
 
