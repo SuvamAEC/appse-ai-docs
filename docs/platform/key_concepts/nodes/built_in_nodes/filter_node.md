@@ -19,16 +19,16 @@ This is useful when you want to:
 
 The IF section is where you define the rules that determine whether an item is considered True or False.
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\if.png" alt="if" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/if.png" alt="if" width="700"/>
 
 Each condition has three parts:
 
 1. **Field** → the data attribute to evaluate
-   <img src="\img\platform\key-concepts\nodes\built-in\filter\field-if-condition.png" alt="if field" width="700"/>
+   <img src="/img/platform/key-concepts/nodes/built-in/filter/field-if-condition.png" alt="if field" width="700"/>
 2. **Condition** → the comparison operator
-   <img src="\img\platform\key-concepts\nodes\built-in\filter\if-conditions.png" alt="if condition" width="700"/>
+   <img src="/img/platform/key-concepts/nodes/built-in/filter/if-conditions.png" alt="if condition" width="700"/>
 3. **Value** → the expected value
-   <img src="\img\platform\key-concepts\nodes\built-in\filter\value-if-condition.png" alt="value if condition" width="700"/>
+   <img src="/img/platform/key-concepts/nodes/built-in/filter/value-if-condition.png" alt="value if condition" width="700"/>
 
 ### Conditions
 
@@ -63,7 +63,7 @@ Each condition has three parts:
 
 ## AND Conditions
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\and.png" alt="and" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/and.png" alt="and" width="700"/>
 
 The AND button adds another condition inside the same rule group.
 
@@ -75,7 +75,7 @@ Use AND when every condition must be true at the same time.
 
 ## OR Conditions
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\or.png" alt="or" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/or.png" alt="or" width="700"/>
 
 The OR button creates a separate rule group.
 
@@ -99,11 +99,11 @@ Use the **Field** box for the data you want to evaluate, the **Condition** dropd
 
 ### 1. Select the Filter node from the selection screen.
     
-<img src="\img\platform\key-concepts\nodes\built-in\filter\select-filter-node.png" alt="select-filter-node" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/select-filter-node.png" alt="select-filter-node" width="700"/>
 
 ### 2. An empty configuration screen is displayed.
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\empty-filter-node.png" alt="empty-filter-node" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/empty-filter-node.png" alt="empty-filter-node" width="700"/>
 
 ### 3. Configuring the Field and Value boxes
 
@@ -114,13 +114,13 @@ The Field box defines the left side of the comparison. You can configure it in a
 1. **Drag and drop** any field from the current node's input schema into the Field box.
 2. **Type the exact field name** from the input data (for example, `CardCode` or `BPAddresses[0].Street`).
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\field_mapped.png" alt="Field mapped" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/field_mapped.png" alt="Field mapped" width="700"/>
 
 3. **Combine a field with supported functions** — use a field name together with [supported functions](/platform/key-concepts/expressions/using-functions) to transform the expression value before comparison (for example, `{{date_diff($payload.createdAt, now(), 'days')}}` or `{{mod($payload.id,`2`)}}` or `{{substringAfter($payload.email, '@')}}` ).
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\date_diff.png" alt="Date diff function" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/date_diff.png" alt="Date diff function" width="700"/>
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\mod.png" alt="Mod function" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/mod.png" alt="Mod function" width="700"/>
 
 #### Value box
 
@@ -129,7 +129,7 @@ The Value box defines the right side of the comparison. You can configure it in 
 1. **Drag and drop** any field from the direct preceeding node (displayed in the current node's input schema) into the Value box.
 2. **Drag and drop** any field from a **prior node's** output in the workflow, say, data field displayed for an earlier node or trigger (displayed in the current node's input schema).
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\prior_node.png" alt="Prior Node" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/prior_node.png" alt="Prior Node" width="700"/>
 
 3. **Combine a field with expressions** — use a field name together with [supported functions](/platform/key-concepts/expressions/using-functions) to build the comparison value.
 
@@ -139,22 +139,22 @@ You can mix these approaches across Field and Value as per your integration requ
 
 User can also use AND and OR conditions in the Filter node like this:
 
-First, user clicked **AND +** and added another rule where `order.status` is **Equal to** `Shipped` **AND** `customer.segment` is **Equal to** `Premium`.
+- First, user clicked **AND +** and added another rule where `order.status` is **Equal to** `Shipped` **AND** `customer.segment` is **Equal to** `Premium`.
 
-Then, user clicked **OR +** to create a second group, where `dates.orderDate` is **Later than** `01/02/2025 14:00`.
+- Then, user clicked **OR +** to create a second group, where `dates.orderDate` is **Later than** `01/02/2025 14:00`.
 
-**Together, this means a record will pass the filter if it matches:**
+- **Together, this means a record will pass the filter if it matches:**
 `(order.status = Shipped AND customer.segment = Premium) OR (orderDate > 01/02/2025 14:00)`.
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\or-condition.png" alt="and or condition" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/or-condition.png" alt="and or condition" width="700"/>
 
 ### 4. Execute the Node and Check the Output
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\execute.png" alt="Execute" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/execute.png" alt="Execute" width="700"/>
 
 ### 5. Output Behavior
 
-<img src="\img\platform\key-concepts\nodes\built-in\filter\filtered-branch.png" alt="filtered branch" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/filter/filtered-branch.png" alt="filtered branch" width="700"/>
 
 * All records that satisfy at least one of the above rule groups are passed to the next connected node (for example, a shipped order from a premium customer, or any order placed after the specified date).
 * Records that do not satisfy any of the configured groups are filtered out and will not be processed further.

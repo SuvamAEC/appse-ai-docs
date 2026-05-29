@@ -17,16 +17,16 @@ This is useful when you want to:
 
 The IF section is where you define the rules that determine whether an item is considered True or False.
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\if.png" alt="if" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/if.png" alt="if" width="700"/>
 
 Each condition has three parts:
 
 1.  **Field** → the data attribute to evaluate
-    <img src="\img\platform\key-concepts\nodes\built-in\decision\field-if-condition.png" alt="field if condition" width="700"/>
+    <img src="/img/platform/key-concepts/nodes/built-in/decision/field-if-condition.png" alt="field if condition" width="700"/>
 2.  **Condition** → the comparison operator
-    <img src="\img\platform\key-concepts\nodes\built-in\decision\if-conditions.png" alt="if conditions" width="700"/>
+    <img src="/img/platform/key-concepts/nodes/built-in/decision/if-conditions.png" alt="if conditions" width="700"/>
 3.  **Value** → the expected value
-    <img src="\img\platform\key-concepts\nodes\built-in\decision\value-if-condition.png" alt="value if conditions" width="700"/>
+    <img src="/img/platform/key-concepts/nodes/built-in/decision/value-if-condition.png" alt="value if conditions" width="700"/>
 
 ### Conditions
 
@@ -61,13 +61,13 @@ Each condition has three parts:
 
 ## AND Conditions
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\and.png" alt="and" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/and.png" alt="and" width="700"/>
 
 The AND button adds another condition inside the same rule group.
 
 **Example meaning:**
 Condition A **AND** Condition B
-<img src="\img\platform\key-concepts\nodes\built-in\decision\and-condition.png" alt="and-condition" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/and-condition.png" alt="and-condition" width="700"/>
 
 For the item to be marked True, both conditions must be satisfied.
 
@@ -75,13 +75,13 @@ Use AND when all conditions must be true at the same time.
 
 ## OR Conditions
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\or.png" alt="or" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/or.png" alt="or" width="700"/>
 
 The OR button creates a separate rule block.
 
 **Example meaning:**
 **(Group 1: ConditionA AND ConditionB)** OR **(Group 2: ConditionC AND ConditionD)**
-<img src="\img\platform\key-concepts\nodes\built-in\decision\or-condition.png" alt="or condition" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/or-condition.png" alt="or condition" width="700"/>
 
 If any one group evaluates to true, the item is routed to the True output.
 
@@ -100,11 +100,11 @@ Use the **Field** box for the data you want to evaluate, the **Condition** dropd
 
 ### 1. Select the Decision node from the selection screen.
     
-<img src="\img\platform\key-concepts\nodes\built-in\decision\select-decision-node.png" alt="select-decision-node" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/select-decision-node.png" alt="select-decision-node" width="700"/>
 
 ### 2. An empty configuration screen is displayed.
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\empty-decision-node.png" alt="empty-decision-node" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/empty-decision-node.png" alt="empty-decision-node" width="700"/>
 
 ### 3. Configuring the Field and Value boxes
 
@@ -115,13 +115,13 @@ The Field box defines the left side of the comparison. You can configure it in a
 1. **Drag and drop** any field from the current node's input schema into the Field box.
 2. **Type the exact field name** from the input data (for example, `CardCode` or `BPAddresses[0].Street`).
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\field_mapped.png" alt="Field mapped" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/field_mapped.png" alt="Field mapped" width="700"/>
 
 3. **Combine a field with supported functions** — use a field name together with [supported functions](/platform/key-concepts/expressions/using-functions) to transform the expression value before comparison (for example, `{{date_diff($payload.createdAt, now(), 'days')}}` or `{{mod($payload.id,`2`)}}` or `{{substringAfter($payload.email, '@')}}` ).
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\date_diff.png" alt="Date diff function" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/date_diff.png" alt="Date diff function" width="700"/>
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\mod.png" alt="Mod function" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/mod.png" alt="Mod function" width="700"/>
 
 #### Value box
 
@@ -130,7 +130,7 @@ The Value box defines the right side of the comparison. You can configure it in 
 1. **Drag and drop** any field from the direct preceeding node (displayed in the current node's input schema) into the Value box.
 2. **Drag and drop** any field from a **prior node's** output in the workflow, say, data field displayed for an earlier node or trigger (displayed in the current node's input schema).
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\prior_node.png" alt="Prior Node" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/prior_node.png" alt="Prior Node" width="700"/>
 
 3. **Combine a field with expressions** — use a field name together with [supported functions](/platform/key-concepts/expressions/using-functions) to build the comparison value. Similar as explained for Field box.
 
@@ -149,17 +149,17 @@ User can also use AND and OR conditions like this:
 
 ### 4. Execute the Node and Check the Output
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\execute.png" alt="Execute" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/execute.png" alt="Execute" width="700"/>
 
 ### 5. Output (True and False Division)
 
 1.  In the **False branch** of the output, you will see all records that do not satisfy any of the configured groups (for example, an order with an amount of 75000 and status Delivered).
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\false-branch.png" alt="false branch" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/false-branch.png" alt="false branch" width="700"/>
 
 2.  In the **True branch** of the output, you will see all records that satisfy at least one group (for example, Alice Wonderland’s order with an amount of 50000).
 
-<img src="\img\platform\key-concepts\nodes\built-in\decision\true-branch.png" alt="true branch" width="700"/>
+<img src="/img/platform/key-concepts/nodes/built-in/decision/true-branch.png" alt="true branch" width="700"/>
 
 Use these True and False outputs to connect different downstream nodes, depending on how you want to process matching vs non-matching records.
 
