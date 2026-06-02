@@ -4,8 +4,6 @@ description: Step-by-step guide to set up Microsoft Dynamics 365 Sales credentia
 slug: /app-integrations/microsoft-dynamics-365-sales/
 ---
 
-# Microsoft Dynamics 365 Sales
-
 **Microsoft Dynamics 365 Sales** is a customer relationship management (CRM) platform from Microsoft that helps organizations manage leads, opportunities, accounts, contacts, quotes, orders, and customer interactions efficiently. It enables sales teams to automate workflows, improve customer engagement, and drive revenue growth using intelligent sales insights.
 
 This guide walks you through the process of adding **Microsoft Dynamics 365 Sales credentials** within appse ai, enabling secure integration to fetch and post data in your Dynamics 365 Sales environment.
@@ -92,11 +90,11 @@ If the required account is not already added, click **Use another account**. Thi
 
 3. Enter your Microsoft work or school email and click **Next** to continue.
 
-<img src="/img/credentials/dynamics-365-sales/sign-in-email.png" alt="Microsoft sign in page" width="700" height="550"/>
+<img src="/img/credentials/dynamics-365-sales/microsoft-sales-sign-in-email.png" alt="Microsoft sign in page" width="700"/>
 
 4. Enter your password and click **Sign In** to continue.
 
-<img src="/img/credentials/dynamics-365-sales/sign-in.png" alt="Enter password" width="700" height="550"/>
+<img src="/img/credentials/dynamics-365-sales/microsoft-sign-in.png" alt="Enter password" width="700"/>
 
 :::note
 After entering your Microsoft credentials successfully, Microsoft may prompt you with the option:
@@ -107,13 +105,13 @@ After entering your Microsoft credentials successfully, Microsoft may prompt you
 - **Yes** → to remain signed in on the device
 - **No** → to continue without staying signed in
 
-<img src="/img/credentials/dynamics-365-sales/stay-signed-in.png" alt="Stay signed in prompt" width="700" height="550"/>
+<img src="/img/credentials/dynamics-365-sales/microsoft-stayed-sign-in.png" alt="Stay signed in prompt" width="700"/>
 
 :::note
 Once authorization is successful, your session will be established and an **access token** will be securely generated and stored.
 :::
 
-<img src="/img/credentials/dynamics-365-sales/successful-validation.png" alt="Create a new credential" width="700"/>
+<img src="/img/credentials/dynamics-365-sales/successful-validation.png" alt="Credential Validation" width="700"/>
 
 ---
 
