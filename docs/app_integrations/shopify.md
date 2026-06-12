@@ -294,4 +294,6 @@ If you followed all the steps correctly, your credential will be connected succe
 
 ---
 
-Need help? Contact our support team at [hello@appse.ai](mailto:hello@appse.ai)
+## Support
+
+Need help? Contact the support team at [support@appse.ai](mailto:support@appse.ai)
