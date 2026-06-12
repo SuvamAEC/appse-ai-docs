@@ -14,15 +14,13 @@ HubSpot Marketplace installations use OAuth 2.0 authentication only. Install and
 
 <ConnectAccountButton
   appName="HubSpot"
-  authorizeUrl="https://workflow.appse.ai/credentials/"
+  authorizeUrl="https://workflow.appse.ai/credentials?appCode=hubspotcrm&credentialTypeCode=hubspotcrm_oauth2_public"
 />
 
 Click **Connect your HubSpot Account** above to open the Public App authorization page and start the OAuth connection. If you are not signed in to appse ai, you will be prompted to log in or register first.
 
 ### Add Credential in appse ai
 
-- Click on Add Credentials.
-- Select HubSpot from the list of available applications.
 - Click Save & Authorize.
 
 <img src="/img/credentials/hubspot/public/click_save_authorize.png" alt="Save Authorize screen" width="700"/>
