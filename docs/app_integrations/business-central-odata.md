@@ -126,7 +126,7 @@ Select based on your use case:
 | Query       | Read-only data access                |
 | Codeunit    | Custom logic or automation           |
 
-:::info
+:::note
 For integrations with **appse ai**, you should publish **Page** objects. Page web services support full CRUD operations, filtering, sorting, and pagination, making them the most flexible and widely supported option for external integrations such as APIs, middleware, and automation platforms.
 :::
 
@@ -1656,8 +1656,8 @@ Click on **Continue**, then **Run** node.
   }
 ]
 ```
------------------------
+---
 
 ## Support
 
-Need help? Contact our support team at [hello@appse.ai](mailto:hello@appse.ai)
+Need help? Contact our support team at [support@appse.ai](mailto:support@appse.ai)
