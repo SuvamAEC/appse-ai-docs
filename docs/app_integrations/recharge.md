@@ -10,7 +10,7 @@ Recharge is a leading subscription management platform built for Shopify merchan
 
 ## Set Up Credential
 
-:::info
+:::note
 
 Before creating a Recharge credential in appse ai, ensure you have a Recharge merchant account and have generated an API token from the Recharge merchant portal.
 
@@ -35,8 +35,6 @@ Click **Select a Credential** and choose **Recharge** from the application list.
 
 <img src="/img/credentials/recharge/select-recharge-credential.png" alt="appse ai Recharge Select Credential" width="700"/>
 
-<br/>
-
 This opens the Recharge credential form. Add your **Connection Name**.
 
 <img src="/img/credentials/recharge/recharge-connection-name.png" alt="appse ai Recharge Connection Name" width="700"/>
@@ -57,8 +55,6 @@ Click **Create an API token**. Enter a name for the token and select the require
 
 <img src="/img/credentials/recharge/recharge-create-api-token.png" alt="appse ai Recharge Create API Token" width="700"/>
 
-<br/>
-
 Enable the following scopes to support all appse ai actions and triggers:
 
 `read_customers` `write_customers` `read_subscriptions` `write_subscriptions` `read_orders` `write_orders` `read_products`
@@ -77,9 +73,7 @@ Return to the appse ai credential form. Paste the copied token into the **API Ke
 
 <img src="/img/credentials/recharge/recharge-paste-api-key-1.png" alt="appse ai Recharge Save Credential" width="700"/>
 
-<br/>
-
-:::warning
+:::caution
 
 Keep your API token secure. Do not share it publicly. If a token is compromised, revoke it immediately from the Recharge merchant portal and generate a new one.
 
@@ -130,4 +124,4 @@ Here is a list of the available triggers and actions for Recharge:
 
 ## Support
 
-Need help? Contact our support team at [hello@appse.ai](mailto:hello@appse.ai)
+Need help? Contact our support team at [support@appse.ai](mailto:support@appse.ai)
