@@ -6,7 +6,7 @@ slug: /app-integrations/sap-business-one-dis
 
 SAP Business One DIS is an on-premise integration for SAP Business One that connects your local SAP instance to appse ai through a dedicated On-Prem agent.
 
-:::info
+:::note
 
 - The **On-Prem agent** must be active and reachable for the remaining fields to load and for the credential to connect successfully.
 - Make sure the selected agent has access to the SAP Business One environment and the license server.
@@ -132,13 +132,14 @@ The SAP Business One DIS integration currently supports the following triggers. 
 
 If the following error is displayed for SAP DIS:
 
-:::warning
-<img src="/img/credentials/sap-business-one-dis/quickfix.png" alt="SAP DIS SM_OBS_DLL error 
-screenshot" width="700"/>
+<img src="/img/credentials/sap-business-one-dis/quickfix.png" alt="SAP DIS SM_OBS_DLL error screenshot" width="700"/>
 
-1. Stop the SAP-related service from Services.
-2. Delete the folder at `C:\Windows\Temp\SM_OBS_DLL\1000120` (Note: The folder name may vary depending on your environment)
-3. Start the SAP service again, verify it is running and try the connection once more.
+:::caution
+To resolve this error:
+
+- Stop the SAP-related service from Services.
+- Delete the folder at `C:\Windows\Temp\SM_OBS_DLL\1000120` (Note: The folder name may vary depending on your environment).
+- Start the SAP service again, verify it is running, and try the connection once more.
 :::
 
 ## Support
