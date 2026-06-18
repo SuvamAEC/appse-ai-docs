@@ -55,36 +55,36 @@ Open [Shopify Admin](https://admin.shopify.com) and log in using your Shopify ad
 #### Step 2: Open Apps Settings
 
 From the left-hand menu, click **Settings** at the bottom.
-<img src="/img/credentials/shopify/s1.png"  width="700"/>
+<img src="/img/credentials/shopify/s1.png" alt="Shopify settings option" width="700"/>
 
 Then, from the Settings menu, click **Apps**.
-<img src="/img/credentials/shopify/s2.png"  width="700"/>
+<img src="/img/credentials/shopify/s2.png" alt="App option inside settings" width="700"/>
 
 ---
 
 #### Step 3: Open Develop Apps
 
 On the Apps page, click **"Develop apps"** from the top-right section.
-<img src="/img/credentials/shopify/s3.png"  width="700"/>
+<img src="/img/credentials/shopify/s3.png" alt="Develop Apps button" width="700"/>
 
 ---
 
 #### Step 4: Open the Dev Dashboard
 
 Click **"Build apps in Dev Dashboard"**.
-<img src="/img/credentials/shopify/s4.png"  width="700"/>
+<img src="/img/credentials/shopify/s4.png" alt="Build apps in Dev Dashboard button" width="700"/>
 
 ---
 
 #### Step 5: Create a New App
 
 In the Dev Dashboard, click **"Create app"** from the top-right section.
-<img src="/img/credentials/shopify/s5.png"  width="700"/>
+<img src="/img/credentials/shopify/s5.png" alt="Create app button" width="700"/>
 
 You will see the **"Start from Dev Dashboard"** section.
 
 Enter a valid app name (must be within 30 characters), then click **"Create"**.
-<img src="/img/credentials/shopify/s6.png"  width="700"/>
+<img src="/img/credentials/shopify/s6.png" alt="Name of the app" width="700"/>
 
 ---
 
@@ -98,7 +98,7 @@ In the **App URL** field, no modification is required since this app is intended
 
 Go to the **Admin API scope configuration** section.
 Select the scopes relevant to the APIs you want to use — such as customer, order, or product scopes — then **Save** the configuration. You can also use the default scopes displayed in the Shopify Credential form in appse ai platform.
-<img src="/img/credentials/shopify/s7.png"  width="700"/>
+<img src="/img/credentials/shopify/s7.png" alt="Select scopes options" width="700"/>
 
 ---
 
@@ -110,7 +110,7 @@ In the **Redirect URL** section, add the Callback URL exactly as displayed in th
 ```
 https://embedded-ui.appse.ai/oauth-callback.html
 ```
-<img src="/img/credentials/shopify/s8.png"  width="700"/>
+<img src="/img/credentials/shopify/s8.png" alt="Redirect URL section" width="700"/>
 
 > ⚠️ Make sure the URL is entered **exactly** as shown in credential form, including `https://`. This URL is required for appse ai to complete the OAuth 2.0 authorization flow.
 
@@ -119,25 +119,25 @@ https://embedded-ui.appse.ai/oauth-callback.html
 #### Step 9: Release the App Version
 
 Click **"Release"**.
-<img src="/img/credentials/shopify/s9.png"  width="700"/>
+<img src="/img/credentials/shopify/s9.png" alt="Release Button" width="700"/>
 
 You will be prompted for an app version value. Enter a version (e.g., `v1`) to keep track of your app versioning, then click **"Release"** again.
 
 After this, the app version will become active.
-<img src="/img/credentials/shopify/s10.png"  width="700"/>
+<img src="/img/credentials/shopify/s10.png" alt="Release app" width="700"/>
 
 ---
 
 #### Step 10: Get Client ID and Client Secret
 
 Click **"Settings"** from the left menu inside your app.
-<img src="/img/credentials/shopify/s11.png"  width="700"/>
+<img src="/img/credentials/shopify/s11.png" alt="App settings option" width="700"/>
 
 You will see:
 
 - **Client ID** — Copy this directly.
 - **Client Secret** — Click the copy button next to it.
-<img src="/img/credentials/shopify/s12.png"  width="700"/>
+<img src="/img/credentials/shopify/s12.png" alt="Copy Client ID and Client Secret" width="700"/>
 
 > ⚠️ Store both values securely. You will need them to complete the credential setup in appse ai.
 
@@ -147,19 +147,19 @@ You will see:
 
 1. **Enter the Shop Subdomain**  
    From the left-hand menu, click **Settings** at the bottom.
-  <img src="/img/credentials/shopify/s1.png"  width="700"/>
+  <img src="/img/credentials/shopify/s1.png" alt="Shopify settings option" width="700"/>
 
    The Shop Subdomain is displayed at the top of the sidebar menu.
-   <img src="/img/credentials/shopify/s19.png"  width="700"/>
+   <img src="/img/credentials/shopify/s19.png" alt="Store Subdomain" width="700"/>
    > **Example:** If your Shopify subdomain looks like **marcostore-9454.myshopify.com**, you only need to paste **marcostore-9454** in the credential form. 
 
-   <img src="/img/credentials/shopify/s14.png" width="700"/>
+   <img src="/img/credentials/shopify/s14.png" alt="appse ai credential form - Store Subdomain field" width="700"/>
 
 2. **Enter the Client Credentials**  
    Fill in the following details:
    - **Client ID**
    - **Client Secret**  
-   <img src="/img/credentials/shopify/s13.png" width="700"/>
+   <img src="/img/credentials/shopify/s13.png" alt="appse ai credential form - Client ID and Client Secret fields" width="700"/>
 
 3. **Save the Configuration**  
    Click on the **"Save"** button. A popup will appear prompting you to log in using your Shopify account.
@@ -168,13 +168,13 @@ You will see:
    Enter your Shopify Admin Account's:
    - **Email Address**
    - **Password**
-   <img src="/img/credentials/shopify/s17.png" width="700"/>
+   <img src="/img/credentials/shopify/s17.png" alt="Shopify Oauth Login popup" width="700"/>
 
 5. **Install the App**  
    After logging in, proceed to install the app you developed.
    A warning maybe displayed stating that the app hasn't been reviewed. This is expected for custom or private apps.
 
-   <img src="/img/credentials/shopify/s15.png" width="700"/>
+   <img src="/img/credentials/shopify/s15.png" alt="Install the app" width="700"/>
 
 6. **Confirmation**  
    Once the installation is successful:
@@ -183,7 +183,7 @@ You will see:
    - Displayed on the **Credentials** page with a green tick that confirms that the credential is successfully validated
 
    You can now use the credential for the required workflow integrations.  
-   <img src="/img/credentials/shopify/s18.png" width="700"/>
+   <img src="/img/credentials/shopify/s18.png" alt="Credential Listing Page" width="700"/>
 
   </TabItem>
     <TabItem value="api-key" label="API Key">
