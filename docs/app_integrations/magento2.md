@@ -1,5 +1,6 @@
 ---
 title: "Magento 2"
+description: "Connect your Magento 2 store to appse ai to automate orders, products, and customer data management."
 slug: /app-integrations/magento2/
 ---
 
@@ -154,7 +155,7 @@ For a full list of supported fields, refer to the [Magento 2 REST API documentat
 
 #### Scenario 1: Create a New Address While Updating a Customer
 
-:::info
+:::note
 Use this configuration when you want to **add a new shipping or billing address** to an existing customer record during the update.
 :::
 
@@ -176,7 +177,7 @@ Use this configuration when you want to **add a new shipping or billing address*
 
 #### Scenario 2: Update an Existing Address While Updating a Customer
 
-:::info
+:::note
 Use this configuration when you want to **modify an address that already exists** on the customer record.
 :::
 
@@ -194,6 +195,6 @@ Apart from the Address ID, users can provide any other fields they wish to updat
 
 ---
 
-## Need Help?
+## Support
 
-If you’re unsure about any field or face connection issues, reach out to our support team at [hello@appse.ai](mailto:support@appse.ai)
+If you’re unsure about any field or face connection issues, reach out to our support team at [support@appse.ai](mailto:support@appse.ai)
