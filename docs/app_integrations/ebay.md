@@ -11,7 +11,7 @@ EBay is a global e-commerce marketplace that enables businesses and individuals 
 
 ---
 
-## Set Up Credential
+## Setup Credential
 
 :::note
 
@@ -28,7 +28,7 @@ You'll be asked to fill in the following details:
 | **Connection Name** | A label to identify this credential within appse ai. |
 | **App ID (Client ID)** | The Client ID from your EBay Developer Portal Production keyset. |
 | **Cert ID (Client Secret)** | The Client Secret from your EBay Developer Portal Production keyset. |
-| **RuName (Redirect URL Name)** | The RuName generated after registering the appse ai callback URL in the EBay Developer Portal. |
+| **RuName (Redirect URL Name)** | The RuName (eBay Redirect URL Name) associated with the redirect URL entry registered in the eBay Developer Portal for appse ai. |
 | **Base API URL** | Pre-filled: `https://api.ebay.com/` |
 | **Authorization URL** | Pre-filled: `https://auth.ebay.com/oauth2/authorize` |
 | **Token URL** | Pre-filled: `https://api.ebay.com/identity/v1/oauth2/token` |
@@ -74,9 +74,10 @@ You should now be on the **User Tokens** page. If not, navigate directly to [EBa
 1. Click **Get a Token from EBay via Your Application**.
 2. In the **RuName** section, click **Add EBay Redirect URL**.
 3. If this is your first time, EBay will display a **"Confirm the Legal Address for the Primary Contact or Business"** form before proceeding. Complete and submit this form to continue.
-4. Once on the redirect URL registration screen, paste the appse ai callback URL into the **Your Auth accepted URL** field.
-5. Click **Save**. EBay will generate a **RuName** — a unique identifier string (e.g., `YourAppName-YourApp-12345`), not a URL.
-6. Copy this RuName identifier and paste it into the **RuName (Redirect URL Name)** field in appse ai.
+4. A new entry row appears. EBay pre-assigns a **RuName** to this entry immediately — a unique alphanumeric identifier string (e.g., `AppName-AppName-PRD-a1b2c3d4e-12345678`), not a URL. Note this value now — it does not change after saving.
+5. In the same entry row, paste the following appse ai callback URL into the **Your Auth accepted URL** field: `https://embedded-ui.appse.ai/oauth-callback.html`
+6. Click **Save** to confirm the redirect URL entry.
+7. Copy the **RuName** from the entry and paste it into the **RuName (Redirect URL Name)** field in appse ai.
 
 :::note
 The callback URL to register can be found in the appse ai credential form under the **RuName (Redirect URL Name)** field help text or your appse ai workspace settings.
