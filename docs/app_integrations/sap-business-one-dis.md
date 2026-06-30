@@ -4,27 +4,84 @@ description: Step-by-step guide to set up SAP Business One DIS credentials for a
 slug: /app-integrations/sap-business-one-dis
 ---
 
-SAP Business One DIS is an on-premise integration for SAP Business One that connects your local SAP instance to appse ai through a dedicated On-Prem agent.
+SAP Business One DIS is an on-premise integration for SAP Business One that connects your local SAP instance to appse ai through a dedicated On-Prem Connector.
 
-:::note
+---
 
-- The **On-Prem agent** must be active and reachable for the remaining fields to load and for the credential to connect successfully.
-- Make sure the selected agent has access to the SAP Business One environment and the license server.
+## Prerequisites
 
-:::
+Before you begin SAP Business One DIS setup, confirm the following requirements are in place on the machine where you will install the On-Prem Connector.
+
+### SAP Business One components
+
+The target system must have **SAP Business One Service Manager** installed and configured on the same environment where the On-Prem Connector will be installed.
+
+- Open **SAP Business One Service Manager** and confirm the **SBO DI Server** service is configured and running.
+
+<img src="/img/credentials/sap-business-one-dis/sbo-diserver.jpg" alt="SAP Business One Service Manager showing SBO DI Server service" width="450" height="350"/>
+
+Work with your SAP administrator to confirm Service Manager is installed and operational before proceeding.
+
+#### Optional: SAP Business One Client
+
+Installing **SAP Business One Client** is not mandatory for the integration to work but it can be helpful for visual verifications.
+
+### On-Prem Connector
+
+SAP Business One DIS communicates with appse ai through an **On-Prem Connector** — a locally installed agent that securely bridges your on-premise SAP environment and the appse ai platform. The connector must be created, installed, and showing an **Online** status before you can complete credential setup.
+
+If you have not set up an On-Prem Connector yet, follow the [On-Prem Connector setup guide](/platform/key-concepts/on-premise-agent/on-premise-agent-setup) first.
+
+---
 
 ## Setup Credential
 
-To configure the credential, follow the steps below.
+Complete the steps below in order. Credential configuration on the Credentials page is the final step and depends on a working On-Prem Connector.
 
-### 1. Select an active On-prem agent
+### Step 1: Set up the On-Prem Connector
 
-- Use the **On-Prem Agent** dropdown to choose an active On-Prem agent.
-- Only after selecting an active agent will the remaining configuration fields appear.
+Create, download, and install an On-Prem Connector on a machine that can reach your SAP Business One environment and the internet.
 
-### 2. Provide connection details
+Follow the full walkthrough in the [On-Prem Connector setup guide](/platform/key-concepts/on-premise-agent/on-premise-agent-setup), including:
 
-Fill in the following required fields once the agent is selected:
+- Creating a connector in the appse ai portal
+- Downloading and extracting the installation bundle
+- Running the installer on the target machine
+
+:::note
+Install the On-Prem Connector on a machine that has network access to your SAP Business One server and license server. The selected connector must be able to reach the SAP environment used for this integration.
+:::
+
+### Step 2: Verify the connector is online
+
+After installation, return to the **On-Prem Connectors** page in appse ai and confirm the connector status shows **Online**.
+
+- If the status is still **Offline**, verify the connector service is running on the target machine and that outbound internet connectivity is available.
+- Do not continue to credential setup until the connector is **Online**.
+
+### Step 3: Configure the SAP DIS credential
+
+Once your On-Prem Connector is online, complete SAP Business One DIS authentication on the **Credentials** page.
+
+#### 3.1 Open the Credentials page
+
+- In the appse ai portal, go to the **Credentials** page.
+
+<img src="/img/credentials/sap-business-one-dis/sap-credential_page.jpg" alt="credentialsPage" width="700"/>
+
+- Select **SAP Business One DIS** from the application list.
+
+#### 3.2 Select an active On-Prem Connector
+
+- Use the **On-Prem Connector** dropdown to choose the connector you installed in Steps 1 and 2.
+- The connector must show as active and online.
+- Only after selecting an active connector will the remaining configuration fields appear.
+
+<img src="/img/credentials/sap-business-one-dis/sap-select_connector.png" alt="select-connector" width="700"/>
+
+#### 3.3 Provide connection details
+
+Fill in the following required fields once the connector is selected:
 
 | Field | Description |
 |------|-------------|
@@ -36,11 +93,11 @@ Fill in the following required fields once the agent is selected:
 | License Server | The address and port of your SAP license server (for example, `sapserver:30000`). |
 | Database Type | The database platform used by SAP Business One (for example, Microsoft SQL 2019). |
 
-### 3. Save the credential
+#### 3.4 Save the credential
 
-- After all required fields are filled, click Save to store the credential.
-- If the connection is valid, the credential will be saved and displayed with a green tick
-- Users will be able to use the credential in workflows as needed.
+- After all required fields are filled, click **Save** to store the credential.
+- If the connection is valid, the credential is saved and displayed with a green tick.
+- You can then use the credential in workflows as needed.
 
 ## More Details
 
