@@ -67,7 +67,7 @@ Once your On-Prem Connector is online, complete SAP Business One DIS authenticat
 
 - In the appse ai portal, go to the **Credentials** page.
 
-<img src="/img/credentials/sap-business-one-dis/sap-credential_page.jpg" alt="credentialsPage" width="700"/>
+<img src="/img/credentials/sap-business-one-dis/sap-credential-page.jpg" alt="credentialsPage" width="700"/>
 
 - Select **SAP Business One DIS** from the application list.
 
@@ -77,7 +77,7 @@ Once your On-Prem Connector is online, complete SAP Business One DIS authenticat
 - The connector must show as active and online.
 - Only after selecting an active connector will the remaining configuration fields appear.
 
-<img src="/img/credentials/sap-business-one-dis/sap-select_connector.png" alt="select-connector" width="700"/>
+<img src="/img/credentials/sap-business-one-dis/sap-select-connector.png" alt="select-connector" width="700"/>
 
 #### 3.3 Provide connection details
 
@@ -93,13 +93,59 @@ Fill in the following required fields once the connector is selected:
 | License Server | The address and port of your SAP license server (for example, `sapserver:30000`). |
 | Database Type | The database platform used by SAP Business One (for example, Microsoft SQL 2019). |
 
+For help locating each value in SAP Business One, see the [How to Find Your Credential Values](#how-to-find-your-credential-values) section below.
+
 #### 3.4 Save the credential
 
 - After all required fields are filled, click **Save** to store the credential.
 - If the connection is valid, the credential is saved and displayed with a green tick.
 - You can then use the credential in workflows as needed.
 
-## More Details
+## Triggers
+
+The SAP Business One DIS integration currently supports the following triggers. Use these triggers to start workflows when data changes occur in SAP Business One.
+
+| Trigger | Description |
+| --- | --- |
+| **Item inventory updated (OnHand)** | Fetches data records when an item on-hand quantity changes in SAP Business One. |
+| **Item price updated** | Fetches data records when an item price is updated. |
+| **Items updated** | Fetches data records when existing items are updated. |
+| **New A/R invoices created** | Fetches data records when new accounts receivable invoices are created. |
+| **New business partners created** | Fetches data records when new business partners are created. |
+| **Business partners updated** | Fetches data records when existing business partners are updated. |
+| **New delivery notes created** | Fetches data records when new delivery notes are created. |
+| **New items created** | Fetches data records when new items are created. |
+| **Credit notes created** | Fetches data records when credit notes are created. |
+
+## Actions
+
+The SAP Business One DIS integration currently supports the following actions. Use these actions in workflows to create, update, query, and retrieve SAP Business One records via DIS.
+
+| Action | Description |
+| --- | --- |
+| **Create business partner** | Creates a new business partner record in SAP Business One. Use this to add customers, vendors, or other partner entities. |
+| **Update business partner** | Updates an existing business partner record with the latest details such as contact information, address, or classification. |
+| **Create item** | Creates a new item in the SAP Business One inventory catalog. Useful for adding products or materials. |
+| **Update item** | Updates an existing item record with new pricing, stock levels, descriptions, or other metadata. |
+| **Create sales quotation** | Creates a new sales quotation document in SAP Business One. |
+| **Update sales quotation** | Updates an existing sales quotation with revised line items, pricing, or customer details. |
+| **Create sales order** | Creates a new sales order document in SAP Business One. |
+| **Update sales order** | Updates an existing sales order with revised quantities, pricing, dates, or other order details. |
+| **Create delivery note** | Creates a new delivery note document in SAP Business One to record goods shipped to a customer. |
+| **Update delivery note** | Updates an existing delivery note with changes such as delivery date, quantities, or shipping details. |
+| **Create returns** | Creates a returns document in SAP Business One to process customer returns. |
+| **Create an A/R credit note** | Creates a new accounts receivable (A/R) credit note in SAP Business One. |
+| **Update an A/R credit note** | Updates an existing A/R credit note with revised amounts, line items, or reference details. |
+| **Update an A/R invoice** | Updates an existing accounts receivable (A/R) invoice with respective details. |
+| **Create draft incoming payment** | Creates a draft incoming payment record in SAP Business One for customer payments. |
+| **Create a purchase order** | Creates a new purchase order document in SAP Business One. |
+| **Create an A/P invoice** | Creates a new accounts payable (A/P) invoice in SAP Business One for vendor billing and payables processing. |
+| **Create equipment card** | Creates a new equipment card record in SAP Business One for tracking assets or installed equipment. |
+| **Update equipment card** | Updates an existing equipment card with revised details such as status, location, or maintenance information. |
+| **Execute a select query** | Runs a custom select query against SAP Business One data and returns the results for use in workflow logic or validation. |
+| **Get record by key** | Retrieves a single SAP Business One record by its primary key for lookup, validation, or conditional workflow decisions. Supported modules: `oBusinessPartners` (Business Partner), `oItems` (Item), `oOrders` (Sales Order), `oInvoices` (Invoice A/R), `oDeliveryNotes` (Delivery Note), `oQuotations` (Quotation), `oCreditNotes` (Credit Note), `oPurchaseOrders` (Purchase Order), `oJournalEntries` (Journal Entry), `oIncomingPayments` (Incoming Payment). |
+
+## How to Find Your Credential Values
 
 ### SAP Server Address
 
@@ -142,48 +188,6 @@ Fill in the following required fields once the connector is selected:
 `Microsoft SQL (Legacy)`,`Microsoft SQL 2012`,`Microsoft SQL 2014`,`Microsoft SQL 2016`,`Microsoft SQL 2017`,`Microsoft SQL 2019`,`SAP HANA`
 
 <img src="/img/credentials/sap-business-one-dis/databasetype.png" alt="SAP Business One database type dropdown showing available SQL options" width="700"/>
-
-## Actions
-
-The SAP Business One DIS integration currently supports the following actions. Use these actions in workflows to create, update, query, and retrieve SAP Business One records via DIS.
-
-| Action | Description |
-| --- | --- |
-| **Create business partner** | Creates a new business partner record in SAP Business One. Use this to add customers, vendors, or other partner entities. |
-| **Update business partner** | Updates an existing business partner record with the latest details such as contact information, address, or classification. |
-| **Create item** | Creates a new item in the SAP Business One inventory catalog. Useful for adding products or materials. |
-| **Update item** | Updates an existing item record with new pricing, stock levels, descriptions, or other metadata. |
-| **Create sales quotation** | Creates a new sales quotation document in SAP Business One. |
-| **Update sales quotation** | Updates an existing sales quotation with revised line items, pricing, or customer details. |
-| **Create sales order** | Creates a new sales order document in SAP Business One. |
-| **Update sales order** | Updates an existing sales order with revised quantities, pricing, dates, or other order details. |
-| **Create delivery note** | Creates a new delivery note document in SAP Business One to record goods shipped to a customer. |
-| **Update delivery note** | Updates an existing delivery note with changes such as delivery date, quantities, or shipping details. |
-| **Create returns** | Creates a returns document in SAP Business One to process customer returns. |
-| **Create an A/R credit note** | Creates a new accounts receivable (A/R) credit note in SAP Business One. |
-| **Update an A/R credit note** | Updates an existing A/R credit note with revised amounts, line items, or reference details. |
-| **Create draft incoming payment** | Creates a draft incoming payment record in SAP Business One for customer payments. |
-| **Create a purchase order** | Creates a new purchase order document in SAP Business One. |
-| **Create equipment card** | Creates a new equipment card record in SAP Business One for tracking assets or installed equipment. |
-| **Update equipment card** | Updates an existing equipment card with revised details such as status, location, or maintenance information. |
-| **Execute a select query** | Runs a custom select query against SAP Business One data and returns the results for use in workflow logic or validation. |
-| **Get record by key** | Retrieves a single SAP Business One record by its primary key for lookup, validation, or conditional workflow decisions. Supported modules: `oBusinessPartners` (Business Partner), `oItems` (Item), `oOrders` (Sales Order), `oInvoices` (Invoice A/R), `oDeliveryNotes` (Delivery Note), `oQuotations` (Quotation), `oCreditNotes` (Credit Note), `oPurchaseOrders` (Purchase Order), `oJournalEntries` (Journal Entry), `oIncomingPayments` (Incoming Payment). |
-
-## Triggers
-
-The SAP Business One DIS integration currently supports the following triggers. Use these triggers to start workflows when data changes occur in SAP Business One.
-
-| Trigger | Description |
-| --- | --- |
-| **Item inventory updated (OnHand)** | Fetches data records when an item on-hand quantity changes in SAP Business One. |
-| **Item price updated** | Fetches data records when an item price is updated. |
-| **Items updated** | Fetches data records when existing items are updated. |
-| **New A/R invoices created** | Fetches data records when new accounts receivable invoices are created. |
-| **New business partners created** | Fetches data records when new business partners are created. |
-| **Business partners updated** | Fetches data records when existing business partners are updated. |
-| **New delivery notes created** | Fetches data records when new delivery notes are created. |
-| **New items created** | Fetches data records when new items are created. |
-| **Credit notes created** | Fetches data records when credit notes are created. |
 
 ## Troubleshoot
 
