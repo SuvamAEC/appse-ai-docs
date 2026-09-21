@@ -232,10 +232,6 @@ Here is the list of available actions in NetSuite.
 **Search Records** and **Call a RESTlet** pass your input directly into the request without additional escaping — the RESTlet payload's shape is defined entirely by the target script. Restrict who can configure these actions to trusted workflow builders.
 :::
 
-:::info
-**Call a RESTlet** is in early/dev preview. RESTlets are served from a different NetSuite domain than this app's other SuiteTalk REST actions, and the script/deployment lookup lists have not been fully verified against a live sandbox — confirm they resolve correctly before relying on them in production, or enter the script and deployment internal IDs directly.
-:::
-
 ---
 
 ## Support
