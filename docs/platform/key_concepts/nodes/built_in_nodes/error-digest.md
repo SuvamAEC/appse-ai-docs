@@ -18,9 +18,9 @@ It has a **single input channel** and a **single output channel**.
 
 ## Configuration
 
-The node has two settings, and only one of them is a free-text field.
+The node has the two following configuration fields:
 
-### Operation
+### 1. Operation
 
 | Operation | Window | Sends email |
 | :--- | :--- | :--- |
@@ -33,7 +33,7 @@ The two options **with Email** send the digest for you, using the standard appse
 
 The window always ends at the moment the node runs. A Daily digest that runs at 08:00 covers the previous 24 hours, not the previous calendar day.
 
-### Send To
+### 2. Send To
 
 Only shown for the two **with Email** operations. Enter one or more email addresses **separated by commas**:
 
@@ -63,8 +63,6 @@ Every workflow in your organization is covered, except:
 
 - **deleted workflows**, and
 - **the digest workflows themselves** — a digest never reports on its own failures.
-
-Within the window, the summary reports the **ten nodes with the most errors**, and up to **ten distinct error messages** per node. Repeated identical messages are collapsed, so a node that failed 500 times the same way takes one line rather than five hundred.
 
 ---
 
@@ -115,7 +113,7 @@ To branch on whether anything failed, test the length of `errorSummary`, or read
 1. Add an **On schedule** trigger and set it to run every hour.
 2. Add an **Error Digest** node and choose **Hourly Digest Summary** (not the email one).
 3. Add a **Filter** node if you only care about certain workflows.
-4. Add your Slack or Teams node, and build the message from `{{$payload.errorSummary}}`.
+4. Add your Slack or Teams node, and build the message as a normal workflow appnode.
 
 ---
 
@@ -125,3 +123,8 @@ To branch on whether anything failed, test the length of `errorSummary`, or read
 - The digest covers the whole organization. There is no per-workflow opt-out today — delete a workflow to take it out of the digest.
 - The node runs **once per execution**, not once per input record, so the schedule drives it rather than the data.
 - The two **with Email** operations will stop the workflow with an error if the **Send To** field is empty or contains an address that cannot be delivered to. This is checked as soon as the node runs, not only on days that had failures.
+
+---
+
+## Support
+If you’re unsure about any field or face connection issues, reach out to our support team at [support@appse.ai](mailto:support@appse.ai)

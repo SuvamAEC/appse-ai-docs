@@ -2,12 +2,12 @@
 slug: /platform/key-concepts/error-notifications
 title: Hourly and Daily Error Notifications
 position: 6
-description: Turn on an hourly or daily email summarising every workflow failure across your organisation.
+description: Turn on an hourly or daily email summarising every workflow failure across your organization.
 ---
 
 # Hourly and Daily Error Notifications
 
-The **failure digest** is an opt-in email that tells you what broke across your organisation — the workflows that failed, the nodes inside them, how many errors each one had, and the actual error messages.
+The **failure digest** is an opt-in email that tells you what broke across your organization — the workflows that failed, the nodes inside them, how many errors each one had, and the actual error messages.
 
 It is the quickest way to get proactive notice of failures. You do not have to build anything: turn a switch on and the first digest arrives at the end of the next window.
 
@@ -30,14 +30,11 @@ That is the whole setup. Behind the scenes appse ai creates a small workflow tha
 | Digest | When it sends | What it covers |
 | :--- | :--- | :--- |
 | **Hourly** | Every hour, on the hour | The previous 60 minutes |
-| **Daily** | Every day at 08:00 UTC | The previous 24 hours |
+| **Daily** | Every day at 08:00 UTC (*configurable*) | The previous 24 hours |
 
-The window always ends when the mail is prepared. The daily digest sent at 08:00 covers the 24 hours up to 08:00, not the previous calendar day.
-
-Digest emails go to the address of the user who turned the switch on.
+The window always ends when the mail is prepared. The daily digest sent covers the last 24 hours, not the previous calendar day.
 
 ---
-
 ## What the email contains
 
 For the window just passed, grouped by workflow:
@@ -45,8 +42,6 @@ For the window just passed, grouped by workflow:
 - the **workflow** that failed
 - each **node** inside it that failed, and how many errors it had
 - the **error messages** themselves, so you can usually tell what went wrong without opening anything
-
-The digest reports the **ten nodes with the most errors**, and up to **ten distinct messages** per node. Identical repeated messages are collapsed — a node that failed the same way 500 times appears once with a count of 500, not 500 times.
 
 **If nothing failed, no email is sent.** A quiet inbox means a quiet platform.
 
@@ -62,18 +57,20 @@ A node that processes 50 records and rejects 2 of them keeps going, and the run 
 
 ## Which workflows are covered
 
-Every workflow in your organisation, except:
+Every workflow in your organization, except:
 
-- **archived workflows**, and
+- **deleted workflows**, and
 - **the digest workflows themselves**.
 
-There is no per-workflow opt-out today. To take a noisy workflow out of the digest, archive it.
+There is no per-workflow opt-out today. To take a erroneous workflow out of the digest, delete it.
 
 ---
 
 ## The workflow behind the digest
 
 The digest is not a hidden, hardcoded mailer. It is an ordinary workflow, and once a digest is on you will see it in your workflow list with a link to it from the Notifications page.
+
+<img src="/img/platform/error-notifications/digest-workflows.png" alt="Hourly and Daily failure digest workflows in the workflow list" width="700" style={{border: '1px solid #d0d7de'}}/>
 
 Open it and you will find three nodes:
 
@@ -99,13 +96,13 @@ Switch it off on the **Notifications** page. That stops the schedule and deactiv
 
 Digests can only be switched from the Notifications page. The toggle in the workflow list and in the workflow designer will not act on them, and deleting a digest workflow is blocked — in each case a message points you back here.
 
-This is because a digest is three things created together: the workflow, its schedule, and your organisation's notification setting. Changing only one of them would leave a digest that is switched off but still sending, or switched on but never firing.
+This is because a digest is three things created together: the workflow, its schedule, and your organization's notification setting. Changing only one of them would leave a digest that is switched off but still sending, or switched on but never firing.
 
 ---
 
 ## Billing
 
-Digest workflows do **not** count against your plan's active-workflow allowance. Neither do error workflows. Only your ordinary business workflows draw that balance down.
+Digest workflows do not count against your plan's active-workflow allowance. Only your ordinary business workflows draw that balance down.
 
 ---
 
@@ -115,3 +112,8 @@ Digest workflows do **not** count against your plan's active-workflow allowance.
 - Windows are measured in **UTC**.
 - Recipients are set on the digest workflow's Error Digest node, not on the Notifications page.
 - If a scheduled run is missed, that window is not re-sent — the next digest covers its own window only.
+
+---
+
+## Support
+If you’re unsure about any field or face connection issues, reach out to our support team at [support@appse.ai](mailto:support@appse.ai)

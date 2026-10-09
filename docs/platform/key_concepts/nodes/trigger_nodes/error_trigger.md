@@ -147,8 +147,12 @@ The node outputs a single item. Use it in downstream nodes with expressions, for
 
 - **On workflow error must be the first node.** It is a trigger, so it starts a workflow and cannot sit mid-flow.
 - **An error workflow cannot be activated.** It runs because another workflow failed, never on its own. The Activate toggle is blocked, and attempting it shows a message explaining why. This is expected — linking it is all that is required.
-- **Error workflows do not use up your plan's active-workflow allowance.** Only your ordinary business workflows count against that limit.
 - **Error workflows do not chain.** If your error workflow itself fails, no further error workflow is started, so a loop cannot form.
 - **Deleting an error workflow is not blocked.** Any workflow still pointing at it simply stops having an error workflow, and nothing is sent on its next failure.
 - **Manual test runs count.** Failing a protected workflow from the designer triggers the error workflow just like a live run does.
 - If a workflow has no error workflow linked, nothing is sent on failure. That is the default — this feature never sends anything on its own.
+
+---
+
+## Support
+If you’re unsure about any field or face connection issues, reach out to our support team at [support@appse.ai](mailto:support@appse.ai)
