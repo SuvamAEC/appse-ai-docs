@@ -351,7 +351,7 @@ In the 3-argument form, `inputFormat` must describe the incoming value exactly. 
   "updatedTime": "12:31:27",
   "updatedAt": "2026-02-01T12:31:27Z",
   "orderDate": "2026-06-30",
-  "processingTimeHours": 433
+  "processingTimeHours": 432
 }
 ```
 
