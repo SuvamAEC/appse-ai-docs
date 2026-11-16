@@ -111,6 +111,7 @@ Some actions need scopes beyond the defaults. Add them in the Shopify Dev Dashbo
 | -------------------- | ----------------------------------------- |
 | Draft Orders actions | `read_draft_orders`, `write_draft_orders` |
 | Returns actions      | `read_returns`, `write_returns`           |
+| Create Return        | `read_users` (in addition to the Returns scopes). Without it, use **Create return without staff details in output** instead. |
 | Gift Cards actions   | `read_gift_cards`, `write_gift_cards`     |
 | Analytics actions    | `read_reports`                            |
 | Payouts actions      | `read_shopify_payments_payouts`           |
@@ -2396,6 +2397,7 @@ Click on **Continue**, then **Run** the node.
 - **Returns**
   - [Get Returnable Items of an Order](#get-returnable-items-of-an-order)
   - [Create Return](#create-return)
+  - [Create return without staff details in output](#create-return-without-staff-details-in-output)
   - [Process Return](#process-return)
   - [Close Return](#close-return)
 - **Gift Cards**
@@ -7088,7 +7090,11 @@ Click on **Continue**, then click **Run** node.
 
 #### Create Return
 
-Create Return action opens a return against an order for one or more fulfilled line items, with a reason and quantity for each. Optionally add exchange items to ship to the customer.
+Create Return action opens a return against an order for one or more fulfilled line items, with a reason and quantity for each. Optionally add exchange items to ship to the customer. The output includes staff member details for the return.
+
+:::warning
+This action requires the `read_users` scope on your Shopify credential, because the output includes staff member details. If the scope is missing, the action returns no output. If your Shopify app does not have `read_users`, use [Create return without staff details in output](#create-return-without-staff-details-in-output) instead.
+:::
 
 ##### Configuration Fields
 
@@ -7153,9 +7159,123 @@ Click on **Continue**, then click **Run** node.
 
 ---
 
+#### Create return without staff details in output
+
+Create return without staff details in output action works the same as **Create Return**: it opens a return against an order for one or more fulfilled line items, with a reason and quantity for each, and can optionally add exchange items to ship to the customer. The only difference is that the output does not include staff member details, so the action does not need the `read_users` scope.
+
+:::tip Which action to use?
+| Shopify credential has | Use |
+|------|-------------|
+| `read_returns`, `write_returns` **and** `read_users` | [Create Return](#create-return) — output includes staff member details. |
+| `read_returns`, `write_returns` but **not** `read_users` | Create return without staff details in output |
+
+To check your scopes, open your app in the Shopify Dev Dashboard and review the **Admin API scope configuration**.
+:::
+
+##### Configuration Fields
+
+| Field | Description |
+|------|-------------|
+| Order ID | The order to return items from. (e.g., "gid://shopify/Order/7240844705964") |
+| Return Line Items → Fulfillment Line Item ID | Fulfilled item being returned. Use **Get Returnable Items of an Order** to find it. (e.g., "gid://shopify/FulfillmentLineItem/11523498262700") |
+| Return Line Items → Quantity | Units to return. Cannot exceed the returnable quantity. (e.g., 1) |
+| Return Line Items → Return Reason | **Defective**, **Not As Described**, **Wrong Item**, **Size Too Large**, **Size Too Small**, **Style**, **Color**, **Unwanted**, **Unknown**, or **Other**. |
+| Return Line Items → Return Reason Note | Optional free-text detail. |
+| Exchange Line Items (Optional) → Variant ID | Replacement variant to send. (e.g., "gid://shopify/ProductVariant/46203847561324") |
+| Exchange Line Items → Quantity | Units of the replacement. (e.g., 1) |
+| Exchange Line Items → Applied Discount | Optional discount on the exchange item — a fixed amount and currency, or a percentage. |
+
+Click on **Continue**, then click **Run** node.
+
+------------
+
+##### Result
+
+```json
+[
+  {
+    "return": {
+      "id": "gid://shopify/Return/37958353205",
+      "name": "NW-US-1473-R7",
+      "order": {
+        "id": "gid://shopify/Order/19363380691253",
+        "name": "NW-US-1473"
+      },
+      "status": "OPEN",
+      "decline": null,
+      "refunds": {
+        "nodes": []
+      },
+      "closedAt": null,
+      "createdAt": "2026-11-13T12:32:23Z",
+      "totalQuantity": 1,
+      "returnLineItems": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ReturnLineItem/49071718709",
+            "quantity": 1,
+            "totalWeight": {
+              "unit": "KILOGRAMS",
+              "value": 0
+            },
+            "customerNote": null,
+            "restockingFee": null,
+            "refundedQuantity": 0,
+            "returnReasonNote": "",
+            "processedQuantity": 0,
+            "refundableQuantity": 1,
+            "fulfillmentLineItem": {
+              "id": "gid://shopify/FulfillmentLineItem/19235154133301",
+              "lineItem": {
+                "id": "gid://shopify/LineItem/51437534282037",
+                "sku": "1069",
+                "name": "Iphone 15 pro"
+              }
+            },
+            "processableQuantity": 1,
+            "unprocessedQuantity": 1,
+            "returnReasonDefinition": {
+              "id": "gid://shopify/ReturnReasonDefinition/4",
+              "name": "Received the wrong item",
+              "handle": "received-the-wrong-item",
+              "deleted": false
+            },
+            "withCodeDiscountedTotalPriceSet": {
+              "shopMoney": {
+                "amount": "110000.0",
+                "currencyCode": "INR"
+              },
+              "presentmentMoney": {
+                "amount": "110000.0",
+                "currencyCode": "INR"
+              }
+            }
+          }
+        ]
+      },
+      "exchangeLineItems": {
+        "nodes": []
+      },
+      "requestApprovedAt": "2026-11-13T12:32:23Z",
+      "returnShippingFees": [],
+      "reverseFulfillmentOrders": {
+        "nodes": [
+          {
+            "id": "gid://shopify/ReverseFulfillmentOrder/37302665525",
+            "status": "OPEN"
+          }
+        ]
+      }
+    },
+    "userErrors": []
+  }
+]
+```
+-----------------
+
 #### Process Return
 
-Process Return action processes an existing return in Shopify. Use it to confirm which returned items were received and which exchange items should be shipped, completing an exchange started with the **Create Return** action. Only the line items you map are processed — anything left unmapped is omitted from the request.
+Process Return action processes an existing return in Shopify. Use it to confirm which returned items were received and which exchange items should be shipped, completing an exchange started with the **Create Return** or **Create return without staff details in output** action. Only the line items you map are processed — anything left unmapped is omitted from the request.
 
 ##### Configuration Fields
 
