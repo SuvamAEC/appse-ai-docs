@@ -105,16 +105,11 @@ Select the scopes relevant to the APIs you want to use — such as customer, ord
 :::note
 Add all scopes relevant to the actions and triggers you plan to use in your workflows. After the credential is validated in appse ai, the scopes configured here in the Shopify Dev Dashboard overwrite the scopes in the **API Access Scope** field in the Shopify OAuth credential form. Those scopes are then used for workflow execution. By default, the scopes displayed in the **API Access Scope** field in appse ai are: `read_customers`, `write_customers`, `read_orders`, `write_orders`, `read_products`, `write_products`, `read_all_orders`, `read_gift_cards`, `write_gift_cards`, `read_returns`, `write_returns`. After authorization, these scopes are overwritten by the actual scopes that are configured in your shopify app.
 
-Some actions need scopes beyond the defaults. Add them in the Shopify Dev Dashboard if you plan to use these actions:
+To use all the Shopify actions currently available in appse ai, configure the following scopes in the Shopify Dev Dashboard:
 
-| Actions              | Required Scopes                           |
-| -------------------- | ----------------------------------------- |
-| Draft Orders actions | `read_draft_orders`, `write_draft_orders` |
-| Returns actions      | `read_returns`, `write_returns`           |
-| Create return        | `read_users` (in addition to the Returns scopes). Staff member data is available only on Shopify Plus or Advanced stores. Without `read_users`, use **Create return without staff details in output** instead. |
-| Gift Cards actions   | `read_gift_cards`, `write_gift_cards`     |
-| Analytics actions    | `read_reports`                            |
-| Payouts actions      | `read_shopify_payments_payouts`           |
+`read_all_orders` `read_orders` `write_orders` `read_customers` `write_customers` `read_products` `write_products` `read_draft_orders` `write_draft_orders` `read_inventory` `write_inventory` `read_locations` `write_locations` `read_returns` `write_returns` `read_gift_cards` `write_gift_cards` `read_gift_card_transactions` `write_gift_card_transactions` `read_discounts` `write_discounts` `read_markets` `write_markets` `read_payment_terms` `write_payment_terms` `read_publications` `write_publications` `read_order_edits` `write_order_edits` `read_reports` `read_shopify_payments_payouts` `read_merchant_managed_fulfillment_orders` `write_merchant_managed_fulfillment_orders`
+
+Add `read_users` only if you plan to use the **Create return** action. It is needed to return the staff member who created the return in that action's output, and is available only on Shopify Plus or Advanced stores. Otherwise, use **Create return without staff details in output**, which does not need it.
 
 :::
 
@@ -283,7 +278,7 @@ Set a name for your custom app and click **"Create app"**.
 
 Click **"Configure Admin API scopes"** and enable the following scopes:
 
-`read_all_orders` `read_customers` `write_customers` `read_fulfillments` `write_fulfillments` `read_inventory` `write_inventory` `read_locations` `write_locations` `read_orders` `write_orders` `read_products` `write_products` `read_publications` `write_publications` `read_discounts` `write_discounts` `read_shipping` `write_shipping` `read_returns` `write_returns` `read_draft_orders` `write_draft_orders` `read_gift_cards` `write_gift_cards` `read_reports` `read_shopify_payments_payouts`
+`read_all_orders` `read_orders` `write_orders` `read_customers` `write_customers` `read_products` `write_products` `read_draft_orders` `write_draft_orders` `read_inventory` `write_inventory` `read_locations` `write_locations` `read_returns` `write_returns` `read_gift_cards` `write_gift_cards` `read_gift_card_transactions` `write_gift_card_transactions` `read_discounts` `write_discounts` `read_markets` `write_markets` `read_payment_terms` `write_payment_terms` `read_publications` `write_publications` `read_order_edits` `write_order_edits` `read_reports` `read_shopify_payments_payouts` `read_merchant_managed_fulfillment_orders` `write_merchant_managed_fulfillment_orders`
 
 Add `read_users` only if you plan to use the **Create return** action. It is needed to return the staff member who created the return in that action's output, and is available only on Shopify Plus or Advanced stores. Otherwise, use **Create return without staff details in output**, which does not need it.
 
