@@ -285,7 +285,7 @@ Click **"Configure Admin API scopes"** and enable the following scopes:
 
 `read_all_orders` `read_customers` `write_customers` `read_fulfillments` `write_fulfillments` `read_inventory` `write_inventory` `read_locations` `write_locations` `read_orders` `write_orders` `read_products` `write_products` `read_publications` `write_publications` `read_discounts` `write_discounts` `read_shipping` `write_shipping` `read_returns` `write_returns` `read_draft_orders` `write_draft_orders` `read_gift_cards` `write_gift_cards` `read_reports` `read_shopify_payments_payouts`
 
-Add `read_users` only if you plan to use the **Create return** action. It is needed for the staff member details in that action's output, and is available only on Shopify Plus or Advanced stores. Otherwise, use **Create return without staff details in output**, which does not need it.
+Add `read_users` only if you plan to use the **Create return** action. It is needed to return the staff member who created the return in that action's output, and is available only on Shopify Plus or Advanced stores. Otherwise, use **Create return without staff details in output**, which does not need it.
 
 <img src="/img/credentials/shopify/choose-scopes.png" alt="appse ai shopify choose scopes" width="700"/>
 
@@ -7092,10 +7092,10 @@ Click on **Continue**, then click **Run** node.
 
 #### Create return
 
-Create return action opens a return against an order for one or more fulfilled line items, with a reason and quantity for each. Optionally add exchange items to ship to the customer. The output includes staff member details for the return.
+Create return action opens a return against an order for one or more fulfilled line items, with a reason and quantity for each. Optionally add exchange items to ship to the customer. The output includes details (ID, name and email) of the staff member who created the return.
 
 :::warning
-This action requires the `read_users` scope on your Shopify credential, because the output includes staff member details. Per Shopify, staff member data is available only on **Shopify Plus** or **Advanced** stores. If the scope is missing, no output is returned. If your Shopify app does not have `read_users`, or your store is not on Shopify Plus or Advanced, use [Create return without staff details in output](#create-return-without-staff-details-in-output) instead.
+This action requires the `read_users` scope on your Shopify credential, because the output includes details of the staff member who created the return. Per Shopify, staff member data is available only on **Shopify Plus** or **Advanced** stores. If the scope is missing, the return is still created in Shopify, but the action output shows an Access denied error because it cannot display the staff member details. If your Shopify app does not have `read_users`, or your store is not on Shopify Plus or Advanced, use [Create return without staff details in output](#create-return-without-staff-details-in-output) instead.
 :::
 
 ##### Configuration Fields
@@ -7136,14 +7136,14 @@ Click on **Continue**, then click **Run** node.
       "status": "OPEN",
       "totalQuantity": 1,
       "createdAt": "2026-04-25T08:40:12Z",
+      "staffMember": {
+        "id": "gid://shopify/StaffMember/104857600172",
+        "name": "Alex Morgan",
+        "email": "alex.morgan@example.com"
+      },
       "order": {
         "id": "gid://shopify/Order/7240844705964",
-        "name": "#1768",
-        "staffMember": {
-          "id": "gid://shopify/StaffMember/104857600172",
-          "name": "Alex Morgan",
-          "email": "alex.morgan@example.com"
-        }
+        "name": "#1768"
       },
       "returnLineItems": {
         "nodes": [
@@ -7178,12 +7178,12 @@ Click on **Continue**, then click **Run** node.
 
 #### Create return without staff details in output
 
-Create return without staff details in output action works the same as **Create return**: it opens a return against an order for one or more fulfilled line items, with a reason and quantity for each, and can optionally add exchange items to ship to the customer. The only difference is that the output does not include staff member details, so the action does not need the `read_users` scope.
+Create return without staff details in output action works the same as **Create return**: it opens a return against an order for one or more fulfilled line items, with a reason and quantity for each, and can optionally add exchange items to ship to the customer. The only difference is that the output does not include details of the staff member who created the return, so the action does not need the `read_users` scope.
 
 :::tip Which action to use?
 | Shopify credential and store | Use |
 |------|-------------|
-| `read_returns`, `write_returns` **and** `read_users`, on a **Shopify Plus** or **Advanced** store | [Create return](#create-return) — output includes staff member details. |
+| `read_returns`, `write_returns` **and** `read_users`, on a **Shopify Plus** or **Advanced** store | [Create return](#create-return) — output includes the staff member who created the return. |
 | `read_returns`, `write_returns` but **not** `read_users`, or a store on any other plan | **Create return without staff details in output** |
 
 Per Shopify, staff member data needs the `read_users` scope and a Shopify Plus or Advanced store. To check your scopes, open your app in the Shopify Dev Dashboard and review the **Admin API scope configuration**.
