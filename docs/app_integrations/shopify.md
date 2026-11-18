@@ -107,7 +107,7 @@ Add all scopes relevant to the actions and triggers you plan to use in your work
 
 To use all the Shopify actions currently available in appse ai, configure the following scopes in the Shopify Dev Dashboard:
 
-`read_all_orders` `read_orders` `write_orders` `read_customers` `write_customers` `read_products` `write_products` `read_draft_orders` `write_draft_orders` `read_inventory` `write_inventory` `read_locations` `write_locations` `read_returns` `write_returns` `read_gift_cards` `write_gift_cards` `read_gift_card_transactions` `write_gift_card_transactions` `read_discounts` `write_discounts` `read_markets` `write_markets` `read_payment_terms` `write_payment_terms` `read_publications` `write_publications` `read_order_edits` `write_order_edits` `read_reports` `read_shopify_payments_payouts` `read_merchant_managed_fulfillment_orders` `write_merchant_managed_fulfillment_orders`
+`read_all_orders` `read_orders` `write_orders` `read_customers` `write_customers` `read_products` `write_products` `read_draft_orders` `write_draft_orders` `read_inventory` `write_inventory` `read_locations` `write_locations` `read_returns` `write_returns` `read_gift_cards` `write_gift_cards` `read_gift_card_transactions` `write_gift_card_transactions` `read_discounts` `write_discounts` `read_markets` `write_markets` `read_payment_terms` `write_payment_terms` `read_publications` `write_publications` `read_order_edits` `write_order_edits` `read_reports` `read_shopify_payments_payouts` `read_merchant_managed_fulfillment_orders` `write_merchant_managed_fulfillment_orders` `read_shopify_payments_accounts`
 
 Add `read_users` only if you plan to use the **Create return** action. It is needed to return the staff member who created the return in that action's output, and is available only on Shopify Plus or Advanced stores. Otherwise, use **Create return without staff details in output**, which does not need it.
 
@@ -278,7 +278,7 @@ Set a name for your custom app and click **"Create app"**.
 
 Click **"Configure Admin API scopes"** and enable the following scopes:
 
-`read_all_orders` `read_orders` `write_orders` `read_customers` `write_customers` `read_products` `write_products` `read_draft_orders` `write_draft_orders` `read_inventory` `write_inventory` `read_locations` `write_locations` `read_returns` `write_returns` `read_gift_cards` `write_gift_cards` `read_gift_card_transactions` `write_gift_card_transactions` `read_discounts` `write_discounts` `read_markets` `write_markets` `read_payment_terms` `write_payment_terms` `read_publications` `write_publications` `read_order_edits` `write_order_edits` `read_reports` `read_shopify_payments_payouts` `read_merchant_managed_fulfillment_orders` `write_merchant_managed_fulfillment_orders`
+`read_all_orders` `read_orders` `write_orders` `read_customers` `write_customers` `read_products` `write_products` `read_draft_orders` `write_draft_orders` `read_inventory` `write_inventory` `read_locations` `write_locations` `read_returns` `write_returns` `read_gift_cards` `write_gift_cards` `read_gift_card_transactions` `write_gift_card_transactions` `read_discounts` `write_discounts` `read_markets` `write_markets` `read_payment_terms` `write_payment_terms` `read_publications` `write_publications` `read_order_edits` `write_order_edits` `read_reports` `read_shopify_payments_payouts` `read_merchant_managed_fulfillment_orders` `write_merchant_managed_fulfillment_orders` `read_shopify_payments_accounts`
 
 Add `read_users` only if you plan to use the **Create return** action. It is needed to return the staff member who created the return in that action's output, and is available only on Shopify Plus or Advanced stores. Otherwise, use **Create return without staff details in output**, which does not need it.
 
@@ -2313,7 +2313,7 @@ Click on **Continue**, then **Run** the node.
 
 <TabItem value="actions" label="Actions">
 
-### Actions
+### Action Events
 
 - **Customers**
   - [Get Customer by Email](#get-customer-by-email)
